@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/eurstars-122x122.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Graph</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="assets/visualisations/style.css">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="assets/highlightjs/highlight.css">
+  <script src="assets/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Force Graph Master -->
+  <script src="//unpkg.com/force-graph"></script>
+
+</head>
+<body>
+  <section class="menu cid-rvgZMVDNg8" once="menu" id="menu1-i">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/eurstars-122x122.png" alt="European Stars" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Europinion</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="workflow.html">Workflow</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="code.html">Code</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="data.html">Data</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="graph.html">Knowledge Graph</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="queries.html">Queries</a></li></ul>
+
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/n">free simple site templates</a></section><section class="mbr-section content4 cid-rvrRYYvjg8" id="content4-17" style="background-color: transparent; z-index: 5;">
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-l-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2"><strong>Knowledge Graph</strong></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">The semantic network of our dataset.</h3>
+                </br>
+                </br>
+                </br>
+                <p class="mbr-text mbr-fonts-style display-7">The Knowledge Graph is the core of our project. It gives shape and meaning to the results of the sentiment analysis, by connecting together the tweets with all their predicates and objects in an all-encompassing named graph. Each tweet is represented as a node which is connected to its objects through the edges, named after the corresponding predicate. Different colours represent different languages.</p>
+                <p class="mbr-text pb-2 mbr-fonts-style display-7">Due to the size of our dataset and some technical problems, which we had with <a href="http://wit.istc.cnr.it/stlab-tools/sentilo/index.html" class="text-info" target="_blank">Sentilo</a>, we present a sample of the named graph, whose complete creation is still in progress. For the following graph, we selected the three most popular tweets per language. Hence, this sample graph is just about 0.07% of the final graph's size.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="media-container-row">
+        <div class="col-12 col-l-8">
+          <section class="graph-section">
+                  <div id="graph-container">
+                        <div id="graph"></div>
+                </div>
+          </section>
+        </div>
+    </div>
+</div>
+<section class="mbr-section article content1 cid-rvsMYnIVyX" id="content1-1q">
+    <div class="container">
+      <p class="mbr-fonts-style display-7">The above graph is a visual representation of our ontology, which we designed to organise our data. Our ontology is – like any other ontology – based on triples (subject, predicate, object) and has an IRI (http://www.europinion.com/), which defines the namespace with its predicates. The predicates are tailored to our dataset and encompass generic terms, like <i>eur:createdBy</i>, and some subject specific, like <i>eur:hasTranslation</i> which points to the translated text as the object.</p>
+      <p class="pb-1 mbr-fonts-style display-7">The code below demonstrates along one Tweet, what the structure of the Europinion ontology looks like in RDF/XML. As can be seen in this snippet, the ontology also contains predicates for referencing the Sentilo data: <i>eur:hasPositiveScore</i>, <i>eur:hasAvgPositive</i>, <i>eur:hasNegativeScore</i>, and <i>eur:hasAvgNegative</i>. Those scores were assigned while dynamically creating the full RDF data store in the analysing step, as can be seen in the tab Analysing of our subpage<a href="code.html">Code</a>. The complete RDF/XML file of our named graph is available on our <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">GitHub</a> repository. However, opening the file in a browser is due to its size not recommended.</p>
+        <div class="media-container-row">
+                <pre>
+                    <code class="xml">
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;rdf:RDF
+     xmlns:eur=&quot;http://www.europinion.com/&quot;
+     xmlns:rdf=&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;
+  &gt;
+    &lt;rdf:Description rdf:about="http://www.europinion.com/2019/"&gt;
+      &lt;eur:lang rdf:resource="http://www.europinion.com/2019/fr/"/&gt;
+    &lt;/rdf:Description&gt;
+
+    &lt;rdf:Description rdf:about=&quot;http://www.europinion.com/2019/fr/&quot;&gt;
+      &lt;eur:hasTweet rdf:resource=&quot;http://www.europinion.com/2019/fr/3590&quot;/&gt;
+    &lt;/rdf:Description&gt;
+
+    &lt;rdf:Description rdf:about=&quot;http://www.europinion.com/2019/fr/3590&quot;&gt;
+      &lt;eur:createdBy&gt;LenaSelles33&lt;/eur:createdBy&gt;
+      &lt;eur:hasLocation&gt;Barcelona, Republic Catalonia&lt;/eur:hasLocation&gt;
+      &lt;eur:hasDate rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#date&quot;&gt;2019-05-29&lt;/eur:hasDate&gt;
+      &lt;eur:hasTime rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#time&quot;&gt;22:15:23&lt;/eur:hasTime&gt;
+      &lt;eur:hasLang&gt;fr&lt;/eur:hasLang&gt;
+
+      &lt;eur:hasText&gt;"Bon soir:
+        @Europarl_EN @EP_President
+        Je suis catalane.
+        J'ai donné ma voix aux élections européennes au Président Carles Puigdemont  #KRLS et au député @toni_comin.
+        👉 Vous venez d'usurper mon vote, Cher Monsieur.
+        👉 Qu’es-ce qu’on va faire maintenant?"
+      &lt;/eur:hasText&gt;
+      &lt;eur:hasParsed&gt;
+      	Bon soir: Je suis catalane. J'ai donné ma voix aux élections européennes au Président Carles Puigdemont et au député . Vous venez d'usurper mon vote, Cher Monsieur. Qu’es-ce qu’on va faire maintenant?
+      &lt;/eur:hasParsed&gt;
+      &lt;eur:hasTranslation&gt;
+      	Good evening: I am Catalan. I gave my vote to the european elections the President, Carles Puigdemont, and the member of parliament . You come to usurp my vote, Dear Sir. What are we going to do now?
+      &lt;/eur:hasTranslation&gt;
+
+      &lt;eur:isFavorite rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#integer&quot;&gt;2479&lt;/eur:isFavorite&gt;
+      &lt;eur:hasRetweet rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#integer&quot;&gt;1552&lt;/eur:hasRetweet&gt;
+
+      &lt;eur:hasHashtag&gt;KRLS&lt;/eur:hasHashtag&gt;
+      &lt;eur:hasEmoji&gt;👉&lt;/eur:hasEmoji&gt;
+      &lt;eur:hasEmoji&gt;👉&lt;/eur:hasEmoji&gt;
+      &lt;eur:hasMention&gt;Europarl_EN&lt;/eur:hasMention&gt;
+      &lt;eur:hasMention&gt;EP_President&lt;/eur:hasMention&gt;
+      &lt;has:URL&gt;https://twitter.com/i/web/status/1133859406624559104&lt;/has:URL&gt;
+
+      &lt;eur:hasPositiveScore rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#double&quot;&gt;0.90&lt;/eur:hasPositiveScore&gt;
+      &lt;eur:hasPositiveScore rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#double&quot;&gt;0.81444444&lt;/eur:hasPositiveScore&gt;
+      &lt;eur:hasAvgPositive rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#double&quot;&gt;0.733&lt;/eur:hasAvgPositive&gt;
+
+      &lt;eur:hasNegativeScore rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#double&quot;&gt;-0.645&lt;/eur:hasPositiveScore&gt;
+      &lt;eur:hasAvgNegative rdf:datatype=&quot;http://www.w3.org/2001/XMLSchema#double&quot;&gt;-0.645&lt;/eur:hasAvgPositive&gt;
+
+    &lt;/rdf:Description&gt;
+  &lt;/rdf:RDF&gt;
+                    </code>
+                </pre>
+              </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section once="footers" class="cid-rvh7pWUyp3" id="footer7-j">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="contact.html" class="text-white"><strong>Contact</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="disclaimer.html" class="text-white"><strong>Disclaimer</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="references.html" class="text-white"><strong>References</strong></a></li></ul>
+            </div>
+
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">© Copyright 2019 Severin Josef Burg, Eleonora Peruch</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <script>
+    fetch('data/graph/sampleGraph/graph.json').then(res => res.json()).then(data => {
+      const elem = document.getElementById('graph');
+
+      const Graph = ForceGraph()(elem)
+        .graphData(data)
+        .nodeLabel('id')
+        .nodeColor('colour')
+        .linkColor(() => 'rgba(255,255,255,0.3)')
+        .linkLabel('predicate')
+        .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+        .onNodeClick(node => {
+          // Center/zoom on node
+          Graph.centerAt(node.x, node.y, 1000);
+          Graph.zoom(5, 2000);
+        });
+
+        Graph.zoom(1.05);
+    });
+  </script>
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+
+
+</body>
+</html>

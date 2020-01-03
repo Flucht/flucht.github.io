@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.10.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/eurstars-122x122.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Queries</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="assets/sparql/style.css" type="text/css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="assets/highlightjs/highlight.css">
+  <script src="assets/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- D3SPARQL.js -->
+  <script src="assets/d3sparql/d3.v3.min.js"></script>
+  <script src="assets/d3sparql/script.js"></script>
+
+  <script>
+    function preload(filename, callback) {
+      var Connect = new XMLHttpRequest();
+      var filePath = "data/queries/tables/" + filename + ".json";
+      Connect.open("GET", filePath, false);
+      Connect.setRequestHeader("Content-Type", "text/json");
+      Connect.send(null);
+      var jsonFile = Connect.responseText;
+      callback(filename, JSON.parse(jsonFile));
+    }
+    function exec(filename, callback) {
+      preload(filename, render);
+    }
+    function render(filename, json) {
+      var selectorID = "#result" + filename
+      var config = {
+        "selector": selectorID
+      }
+      d3sparql.htmltable(json, config)
+    }
+  </script>
+</head>
+<body>
+  <section class="menu cid-rvgZMVDNg8" once="menu" id="menu1-k">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                         <img src="assets/images/eurstars-122x122.png" alt="European Stars" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Europinion</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="workflow.html">Workflow</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="code.html">Code</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="data.html">Data</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="graph.html">Knowledge Graph</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="queries.html">Queries</a></li></ul>
+
+        </div>
+    </nav>
+</section>
+
+<div class="accordion bg-transparent" id="menu"> <!-- start of accordion -->
+<div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent"> <!-- div containing the first collapsible -->
+
+    <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
+
+
+      <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-l-8">
+                <h2><button class="coll-button align-center mb-0 pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#visualisations"><strong>Queries</strong></button></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Sparkling SPARQL results.</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="visualisations" class="collapse show" aria-labelledby="headingOne" data-parent="#menu">
+  <section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
+
+
+
+
+    <div class="container">
+        <p class="mbr-text mbr-fonts-style display-7">Our data comes to live by querying the graph with Fuseki. After having created information out of data, the final step is to infer knowledge. The following page demonstrates ways to exploit the knowledge graph with SPARQL. The spectrum of examples comprises thirteen queries. Of those thirteen queries, ten focus on the extraction of specific data from the dataset. The other three queries are used to combine data for visualising phenomena concerning the European Election debate on Twitter. Generally, all queries start from an initial question.</p>
+        <p class="mbr-text pb-5 mbr-fonts-style display-7">The three figures contain the average positive and negative sentiment for each language [Fig. 1], the development of the overall sentiment and the general participation in the discussion [Fig. 2], and the ambiguity of tweets with positive and negative sentiment [Fig. 3]. The raw data for those three figures and all other queries can be found in our <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">GitHub</a> repository.</p>
+        <div class="media-container-row">
+            <div class="col-12 col-l-8">
+                <ul class="nav pt-3 nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">
+                            Fig. 1</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Fig. 2</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="true">
+                            Fig. 3</a></li>
+
+
+
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div>
+                            <div class="col-md-12">
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Average Pos/Neg Sentiment per Language</h3>
+                                <p class="mbr-text pb-3 mbr-fonts-style display-7">The following figure grounds on the question: <i>Which is the average positive and average negative score for each language?</i> This question derives from the research interest in the matter, whether based on the public opinion expressed in tweets, it can be inferred, how a milieu has perceived the political event. As the data shows, there are slight differences in the expressed opinion and a stronger like/dislike regarding the election outcome can be assumed. However, caution is required because cultures see the public expression of strong emotions very differently. A direct correlation between public outspeak and the perception is not necessarily provided.</p>
+                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                                <canvas id="fig1"></canvas>
+                              </p>
+			    </div>
+                            <div class="code-in-visualisation col-md-12">
+                                  <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
+					  <div class="card-body">
+						  <h5 class="card-title">Which is the average positive and average negative score for each language?</h5>
+						  <p class="card-text">
+						     <pre class="pre-wrapper">
+						     <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang
+  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
+  (SUM(?avg_score) AS ?tot_score)
+  (?tot_score/?tweet_count AS ?final_score)
+
+  WHERE {
+    {&#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.
+     ?tweet eur:hasAvgNegative ?n_score.
+      FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
+      BIND((?n_score) AS ?avg_score)
+     }
+  UNION
+  {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?p_score.
+      FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
+      BIND((?p_score) AS ?avg_score)
+  }
+  UNION
+    {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?p_score.
+    ?tweet eur:hasAvgNegative ?n_score.
+      BIND((?n_score+?p_score)/2 as ?avg_score)
+  }
+  }
+
+  GROUP BY (?lang)
+	                                             </code>
+						     </pre>
+						  </p>
+            <p class="align-center pb-1 mbr-fonts-style display-7">For displaying the result in a graph, the data had to be cleaned. See the script on <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">GitHub</a>.</p>
+					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
+						  See the results
+					  </button>
+					</div>
+				    </div>
+
+					   <!-- Modal -->
+					   <div class="modal fade" id="modalvisualisation1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+					       <div class="modal-content">
+						 <div class="modal-header">
+						   <h6 class="modal-title" id="exampleModalLongTitle">Which is the average positive and average negative score for each language?</h6>
+						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						     <span aria-hidden="true">&times;</span>
+						   </button>
+						 </div>
+						 <div class="modal-body table-json">
+						   <div id="resultvisualisation_1"></div>
+						 </div>
+						 <div class="modal-footer">
+						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						 </div>
+					       </div>
+					     </div>
+					   </div>
+				</div>
+                            </div>
+                        </div> <!-- end tab 1-->
+
+                    <div id="tab2" class="tab-pane" role="tabpanel">
+                        <div>
+                            <div class="col-md-12">
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Development of Sentiment and Involvement</h3>
+                              <p class="mbr-text pb-3 mbr-fonts-style display-7">The second visualisation focuses on how the debate on Twitter has transformed over time. The guiding question for the query was: <i>How did emotions and interest change over time after the elections?</i> The hypothesis for this question is the interest would decline rapidly, and the discussion would become more neutral. The data shows how the interest indeed declined. Already on the second day, only half of the number of tweets were sent. Further, after the third day, the amount stagnated around 1.000 tweets. The average sentiment was always slightly more positive and has even become more neutral as predicted.</p>
+                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                                  <canvas id="fig2"></canvas>
+                                </p>
+                            </div>
+			       <div class="code-in-visualisation col-md-12">
+                                  <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+					  <div class="card-body">
+						  <h5 class="card-title">How did emotions and interest change over time after the elections?</h5>
+						  <p class="card-text">
+						     <pre>
+						     <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?date
+  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
+  (SUM(?avg_score) AS ?tot_avg_score)
+  (?tot_avg_score/?tweet_count AS ?daily_avg_score)
+
+  WHERE {
+    {?tweet eur:hasDate ?date.
+     ?tweet eur:hasAvgNegative ?n_score.
+     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
+     BIND((?n_score) AS ?avg_score)
+     }
+  UNION
+    {?tweet eur:hasDate ?date.
+     ?tweet eur:hasAvgPositive ?p_score.
+     FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
+     BIND((?p_score) AS ?avg_score)
+  }
+  UNION
+    {?tweet eur:hasDate ?date.
+     ?tweet eur:hasAvgPositive ?p_score.
+     ?tweet eur:hasAvgNegative ?n_score.
+     BIND((?n_score+?p_score)/2 as ?avg_score)
+  }
+  }
+
+  GROUP BY (?date)
+  ORDER BY ASC (?date)
+	                                             </code>
+						     </pre>
+						  </p>
+					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation2" onclick="exec('visualisation_2_daily')">
+						  See the results
+					  </button>
+					</div>
+				    </div>
+
+					   <!-- Modal -->
+					   <div class="modal fade" id="modalvisualisation2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+					       <div class="modal-content">
+						 <div class="modal-header">
+						   <h6 class="modal-title" id="exampleModalLongTitle">How did emotions and interest change over time after the elections?</h6>
+						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						     <span aria-hidden="true">&times;</span>
+						   </button>
+						 </div>
+						 <div class="modal-body table-json">
+						   <div id="resultvisualisation_2_daily"></div>
+						 </div>
+						 <div class="modal-footer">
+						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						 </div>
+					       </div>
+					     </div>
+					   </div>
+				</div>
+                            </div>
+                        </div> <!--end tab 2-->
+
+
+                    <div id="tab3" class="tab-pane" role="tabpanel">
+                        <div>
+                            <div class="col-md-12">
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Ambiguity of Tweets</h3>
+                              <p class="mbr-text pb-3 mbr-fonts-style display-7">The last graph represents to what degree tweets are two-sided or one-sided in regards to their sentiment. The query followed the descriptive question: <i>Which is the average negative and average positive score for each tweet?</i> We intended to understand whether statements in tweets are usually either strongly negative or strongly positive or if they typically are relatively neutral. The result shows a tendency of the tweets to be eighter strongly one-sided or two-sided with low intensity. Tweets which are strongly two-sided, do exist but are outliers. This phenomenon might be due to the length of tweets in which there is no space to express multiple positions.</p>
+                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                                    <canvas id="fig3"></canvas></p>
+                            </div>
+			       <div class="code-in-visualisation col-md-12">
+            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+					  <div class="card-body">
+						  <h5 class="card-title">Which is the average negative and average positive score for each individual tweet?</h5>
+						  <p class="card-text">
+						     <pre>
+						     <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?tweet ?lang ?p_score ?n_score
+  WHERE {
+    {&#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.
+     ?tweet eur:hasAvgNegative ?n_score.
+      FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
+      BIND(("0") AS ?p_score)
+     }
+  UNION
+  {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?p_score.
+      FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
+      BIND(("0") AS ?n_score)
+  }
+    UNION
+    {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?p_score.
+    ?tweet eur:hasAvgNegative ?n_score.
+    }
+  }
+	                                             </code>
+						     </pre>
+						  </p>
+            <p class="align-center pb-1 mbr-fonts-style display-7">For displaying the result in a graph, the data had to be cleaned. See the script on <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">GitHub</a>.</p>
+					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
+						  See the results
+					  </button>
+					</div>
+				    </div>
+
+					   <!-- Modal -->
+					   <div class="modal fade" id="modalvisualisation3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+					       <div class="modal-content">
+						 <div class="modal-header">
+						   <h6 class="modal-title" id="exampleModalLongTitle">Which is the average negative and average positive score for each individual tweet?</h6>
+						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						     <span aria-hidden="true">&times;</span>
+						   </button>
+						 </div>
+						 <div class="modal-body table-json">
+						   <div id="resultvisualisation_3_lang"></div>
+						 </div>
+						 <div class="modal-footer">
+						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+						 </div>
+					       </div>
+					     </div>
+					   </div>
+				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	</div>
+            </section>
+        </div>
+    </div>
+
+<div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent">  <!-- start of collapsible item 2 #sparql -->
+
+  <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
+
+
+      <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-l-8">
+                <h2><button class="coll-button align-center pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#sparql"><strong>Other SPARQL queries</strong></button></h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Let's ask some more questions.</h3>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <div id="sparql" class="collapse show" data-parent="#menu"> <!--collapse 2 show-->
+
+<div class="container">
+  <div class="row card-row">
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ1">
+      <div class="card-header">CQ1</div>
+      <div class="card-body">
+        <h5 class="card-title">Which tweets have "de" identified as language by Twitter?</h5>
+    <pre>
+	    <code class="sql sparql-text">
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?tweet
+  WHERE {
+  ?tweet eur:hasLang "de".
+  }
+	    </code>
+    </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary button-card" data-toggle="modal" data-target="#modalCQ1" onclick="exec('CQ1')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalCQ1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6 class="modal-title" id="exampleModalLongTitle">Which tweets have "de" identified as language by Twitter?</h6>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div id="resultCQ1"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ2">
+      <div class="card-header">CQ2
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Which tweets have the language set to "en"?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?tweet
+  WHERE {
+    &#60;2019/&#62; eur:lang &#60;2019/en/&#62;.
+    &#60;2019/en/&#62; eur:hasTweet ?tweet.
+  }
+	    </code>
+	   </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ2" onclick="exec('CQ2')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCQ2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Which tweets have the language set to "en"?</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="resultCQ2"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row card-row">
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ3">
+      <div class="card-header">CQ3</div>
+      <div class="card-body">
+      <h5 class="card-title">How many tweets have been tweeted in “bg”?</h5>
+	<pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT (COUNT(?tweet) AS ?total_tweet)
+  WHERE {
+    &#60;2019/&#62; eur:lang &#60;2019/bg/&#62;.
+    &#60;2019/bg/&#62; eur:hasTweet ?tweet.
+  }
+	    </code>
+	   </pre>
+  </div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ3" onclick="exec('CQ3')">
+          See the results
+        </button></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalCQ3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6 class="modal-title" id="exampleModalLongTitle">How many tweets have been tweeted in “bg”?</h6>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="resultCQ3"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ4">
+      <div class="card-header">CQ4</div>
+      <div class="card-body">
+        <h5 class="card-title">Which languages have more than 10000 tweets?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang (COUNT(?tweet) AS ?tweet_count)
+  WHERE {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+  }
+  GROUP BY (?lang)
+  HAVING (?tweet_count &#62; 10000)
+	    </code>
+	   </pre>
+</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ4" onclick="exec('CQ4')">
+          See the results
+        </button></div>
+        </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCQ4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Which languages have more than 10000 tweets?</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="resultCQ4"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row card-row">
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ5">
+      <div class="card-header">CQ5</div>
+      <div class="card-body">
+        <h5 class="card-title">In which of the languages identified by Twitter people tweeted more?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang (COUNT (?tweet) AS ?tweet_count)
+  WHERE {
+   ?tweet eur:hasLang ?lang.
+  }
+  GROUP BY (?lang)
+  ORDER BY DESC(?tweet_count)
+  LIMIT 1
+	    </code>
+	   </pre>
+  </div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ5" onclick="exec('CQ5')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalCQ5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6 class="modal-title" id="exampleModalLongTitle">In which of the languages identified by Twitter people tweeted more?</h6>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div id="resultCQ5"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ6">
+      <div class="card-header">CQ6</div>
+      <div class="card-body">
+        <h5 class="card-title">Which language among the ones that received more than 100 tweets has used the highest number of emojis?</h5>
+	<pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang
+  (COUNT(?tweet) AS ?tweet_count)
+  (COUNT(?e_tweet) AS ?e_tweet_count)
+  (ROUND(?e_tweet_count*100/?tweet_count) AS ?percentage)
+  WHERE {
+    {&#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.}
+  UNION
+  {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?e_tweet.
+    ?e_tweet eur:hasEmoji ?emoji.
+  }
+  }
+  GROUP BY (?lang)
+  HAVING (?tweet_count &#62; 100)
+  ORDER BY DESC (?percentage)
+  LIMIT 1
+	    </code>
+	   </pre>
+  </div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ6" onclick="exec('CQ6')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCQ6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Which language among the ones that received more than 100 tweets has used the highest number of emojis?</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="resultCQ6"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row card-row">
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ7">
+      <div class="card-header">CQ7</div>
+      <div class="card-body">
+        <h5 class="card-title">Which tweet with 'lang' set to 'da' has the highest average negative score?</h5>
+	      <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?tweet ?avg_score
+  WHERE {
+    {&#60;2019/&#62; eur:lang &#60;2019/da/&#62;.
+     &#60;2019/da/&#62; eur:hasTweet ?tweet.
+     ?tweet eur:hasAvgNegative ?avg_score.
+     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
+    }
+    UNION
+    {
+    &#60;2019/&#62; eur:lang &#60;2019/da/&#62;.
+    &#60;2019/da/&#62; eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?p_score.
+    ?tweet eur:hasAvgNegative ?n_score.
+    BIND((?n_score+?p_score)/2 as ?avg_score)
+    FILTER(?avg_score &#60;0)
+    }
+  }
+  ORDER BY ASC (?avg_score)
+  LIMIT 1
+	    </code>
+	   </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ7" onclick="exec('CQ7')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalCQ7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6 class="modal-title" id="exampleModalLongTitle">Which tweet with 'lang' set to 'da' has the highest average negative score?</h6>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div id="resultCQ7"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ8">
+      <div class="card-header">CQ8</div>
+      <div class="card-body">
+        <h5 class="card-title">Which tweet has the highest average negative score?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?tweet ?avg_score
+  WHERE {
+    {?tweet eur:hasAvgNegative ?avg_score.
+     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
+    }
+    UNION
+    {?tweet eur:hasAvgPositive ?p_score.
+     ?tweet eur:hasAvgNegative ?n_score.
+     BIND((?n_score+?p_score)/2 as ?avg_score)
+     FILTER(?avg_score &#60;0)
+    }
+  }
+  ORDER BY ASC (?avg_score)
+  LIMIT 1
+	    </code>
+	  </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ8" onclick="exec('CQ8')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCQ8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Which tweet has the highest average negative score?</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="resultCQ8"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="row card-row">
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ9">
+     <div class="card-header">CQ9</div>
+      <div class="card-body">
+        <h5 class="card-title">Which language expressed the highest percentage of average positive tweets?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang
+  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
+  (COUNT(DISTINCT ?p_tweet) AS ?positive_tweets)
+  (ROUND(?positive_tweets*100/?tweet_count) AS ?percentage)
+  WHERE {
+    {&#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.}
+  UNION
+  {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?avg_score.
+    BIND((?tweet) AS ?p_tweet)
+  }
+  UNION
+  {  &#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.
+     ?tweet eur:hasAvgPositive ?p_score.
+     ?tweet eur:hasAvgNegative ?n_score.
+     BIND((?n_score+?p_score)/2 as ?avg_score)
+     BIND((?tweet) AS ?p_tweet)
+     FILTER(?avg_score &#62; 0)
+  }
+  }
+  GROUP BY (?lang)
+  ORDER BY DESC (?percentage)
+  LIMIT 1
+	    </code>
+	  </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ9" onclick="exec('CQ9')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+   <!-- Modal -->
+   <div class="modal fade" id="modalCQ9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h6 class="modal-title" id="exampleModalLongTitle">Which language expressed the highest percentage of average positive tweets?</h6>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div id="resultCQ9"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="col-sm-6 d-flex each-card">
+    <div class="card" id="CQ10">
+      <div class="card-header">CQ10</div>
+      <div class="card-body">
+        <h5 class="card-title">Which is the percentage (rounded to its integer) of average positive tweets for each language?</h5>
+	  <pre>
+	    <code class="sql sparql-text">
+  BASE &#60;http://www.europinion.com/&#62;
+  PREFIX eur: &#60;http://www.europinion.com/&#62;
+
+  SELECT ?lang
+  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
+  (COUNT(DISTINCT ?p_tweet) AS ?positive_tweets)
+  (ROUND(?positive_tweets*100/?tweet_count) AS ?percentage)
+
+  WHERE {
+    {&#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.}
+  UNION
+  {
+    &#60;2019/&#62; eur:lang ?lang.
+    ?lang eur:hasTweet ?tweet.
+    ?tweet eur:hasAvgPositive ?score.
+    BIND((?tweet) AS ?p_tweet)
+  }
+    UNION
+  {  &#60;2019/&#62; eur:lang ?lang.
+     ?lang eur:hasTweet ?tweet.
+     ?tweet eur:hasAvgPositive ?p_score.
+     ?tweet eur:hasAvgNegative ?n_score.
+     BIND((?n_score+?p_score)/2 as ?avg_score)
+     BIND((?tweet) AS ?p_tweet)
+     FILTER(?avg_score &#62; 0)
+  }
+  }
+  GROUP BY (?lang)
+  ORDER BY DESC (?percentage)
+	    </code>
+	  </pre>
+	</div>
+        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ10" onclick="exec('CQ10')">
+          See the results
+        </button></div>
+    </div>
+   </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalCQ10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title" id="exampleModalLongTitle">Which is the percentage (rounded to its integer) of average positive tweets for each language?</h6>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="resultCQ10"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  </div> <!-- end of collapse 2 show-->
+
+</div> <!-- end of collapsible item 2 #sparql -->
+</div> <!-- end of the accordion -->
+
+<section once="footers" class="cid-rvh7pWUyp3" id="footer7-l">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row row-links">
+                <ul class="foot-menu">
+
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="contact.html" class="text-white"><strong>Contact</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="disclaimer.html" class="text-white"><strong>Disclaimer</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="references.html" class="text-white"><strong>References</strong></a></li></ul>
+            </div>
+
+            <div class="row row-copirayt">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">© Copyright 2019 Severin Josef Burg, Eleonora Peruch</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/mbr-tabs/mbr-tabs.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+
+  <script>
+    function fig3Chart() {
+        scatterChartData = {
+            datasets: [{
+                data: JSON.parse(this.responseText),
+                pointBackgroundColor: 'rgba(0,51,153,0.3)',
+                pointBorderColor: 'rgba(0,51,153,0.3)',
+            }]
+        };
+        var ctx = document.getElementById('fig3').getContext('2d');
+        window.fig3 = Chart.Scatter(ctx, {
+        data: scatterChartData,
+        options: {
+          legend: {
+            display: false,
+          },
+          title: {
+            display: false,
+            text: 'Ambiguity of Tweets',
+            fontSize: 20
+          },
+          scales: {
+              xAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Negative Sentiment of Tweet'
+                },
+                ticks: {
+                  reverse: true,
+                  max: 0,
+                  min : -1,
+                  stepSize: 0.1
+                }
+              }],
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Positive Sentiment of Tweet'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  max : 1,
+                }
+              }]
+          }
+        }
+      });
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", fig3Chart);
+    oReq.open("GET", "data/queries/figures/v3Fig.txt");
+    oReq.send();
+  </script>
+
+  <script>
+	var data = {
+      labels: ["bg", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "ga", "hr", "hu", "it", "lt", "lv", "mt", "nl", "pl", "pt", "ro", "sk", "sl", "sv"],
+      datasets: [{
+        label: 'Positive Sentiment',
+        data: [0.1373671568627451, 0.12379477401129943, 0.17993269537480064, 0.1428267864569669, 0.11383492522628887, 0.16100352005871227, 0.28663991049633847, 0, 0.21836363636363637, 0.15011313294031625, 0, 0.093625, 0, 0.18975608741377073, 0, 0.10272619047619047, 0, 0.17999042689539585, 0.16152789855072464, 0.19370742383910086, 0.0845, 0.22526666666666667, 0.19539642857142858, 0.18110519541149794],
+        backgroundColor: 'rgb(255,204,0)',
+      }, {
+        label: 'Negative Sentiment',
+        data: [-0.1443333333333333, -0.16401932367149757, -0.13903781512605043, -0.1793728807107756, -0.1899452838063439, -0.15923580952380953, -0.16564866071428572, 0, -0.2895, -0.14199173913043478, 0, -0.27246666666666663, 0, -0.17941362627607635, 0, -0.0954, 0, -0.15670092592592594, -0.15056, -0.20172695035460994, -0.027, -0.162, -0.09577083333333333, -0.17752686274509805],
+        backgroundColor: 'rgb(0,51,153)',
+      }]
+		};
+
+		var options = {
+					title: {
+						display: false,
+						text: 'Average Pos/Neg Sentiment per Language',
+            fontSize: 20
+					},
+					tooltips: {
+						mode: 'index',
+						intersect: false
+					},
+					responsive: true,
+					scales: {
+						xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Language'
+              },
+							stacked: true,
+						}],
+						yAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Average Pos/Neg Sentiment'
+              },
+							stacked: true
+						}]
+					}
+				};
+
+    var ctx = document.getElementById('fig1').getContext('2d');
+
+		var fig1Chart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: options
+		});
+  </script>
+
+    <script>
+        var config = {
+            type: 'lineChartData',
+            data: {
+                labels: ['27-05', '28-05', '29-05', '30-05', '31-05', '01-06', '02-06'],
+                datasets: [{
+                    label: 'Total Tweets',
+                    data: [8904,4699,2553,1856,1320,906,1177],
+                    backgroundColor: 'rgb(0,51,153)',
+                    borderColor: 'rgb(0,51,153)',
+                    fill: false,
+                    yAxisID: 'y-axis-1',
+                }, {
+                    label: 'Average Sentiment',
+                    fill: false,
+                    data: [0.094176,0.089817,0.092057,0.086352,0.072255,0.073585,0.058714],
+                    backgroundColor: 'rgb(255,204,0)',
+                    borderColor: 'rgb(255,204,0)',
+                    yAxisID: 'y-axis-2'
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: false,
+                    text: 'Development of Sentiment and Involvement',
+                    fontSize: 20
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dates'
+                        }
+                    }],
+                    yAxes: [{
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            id: 'y-axis-1',
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Total Tweets'
+                            }
+                        }, {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            id: 'y-axis-2',
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Average Sentiment'
+                            }
+                        }]
+                    }
+                }
+            };
+
+        window.onload = function() {
+            var ctx = document.getElementById('fig2').getContext('2d');
+            window.myLine = new Chart.Line(ctx, config);
+        };
+    </script>
+
+</body>
+</html>
