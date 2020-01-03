@@ -513,6 +513,7 @@ div[data-for^="input-range"] input {
 
 .carousel-item img {
   margin: auto; }
+
 .engine {
 	position: absolute;
 	text-indent: -2400px;
@@ -520,4 +521,9 @@ div[data-for^="input-range"] input {
 	padding: 0;
 	top: 0;
 	left: -2400px;
+}
+
+#mapid {
+  height: 300px;
+  width: 100%;
 }
