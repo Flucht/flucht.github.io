@@ -71,14 +71,14 @@
             </div>
         </button>
         <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-logo">
-                    <a href="index.html">
-                         <img src="assets/images/eurstars-122x122.png" alt="European Stars" title="" style="height: 3.8rem;">
-                    </a>
-                </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Europinion</a></span>
-            </div>
+          <div class="navbar-brand">
+              <span class="navbar-logo">
+                  <a href="index.html">
+                       <img src="assets/images/logo.png" alt="Illustration of people fleeing" title="" style="height: 3rem;">
+                  </a>
+              </span>
+              <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Flucht</a></span>
+          </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
@@ -112,8 +112,8 @@
 
 
     <div class="container">
-        <p class="mbr-text mbr-fonts-style display-7">Our data comes to live by querying the graph with Fuseki. After having created information out of data, the final step is to infer knowledge. The following page demonstrates ways to exploit the knowledge graph with SPARQL. The spectrum of examples comprises thirteen queries. Of those thirteen queries, ten focus on the extraction of specific data from the dataset. The other three queries are used to combine data for visualising phenomena concerning the European Election debate on Twitter. Generally, all queries start from an initial question.</p>
-        <p class="mbr-text pb-5 mbr-fonts-style display-7">The three figures contain the average positive and negative sentiment for each language [Fig. 1], the development of the overall sentiment and the general participation in the discussion [Fig. 2], and the ambiguity of tweets with positive and negative sentiment [Fig. 3]. The raw data for those three figures and all other queries can be found in our <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">GitHub</a> repository.</p>
+        <p class="mbr-text mbr-fonts-style display-7">Blablablabla</p>
+        <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> repository.</p>
         <div class="media-container-row">
             <div class="col-12 col-l-8">
                 <ul class="nav pt-3 nav-tabs" role="tablist">
@@ -130,8 +130,8 @@
                     <div id="tab1" class="tab-pane in active" role="tabpanel">
                         <div>
                             <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Average Pos/Neg Sentiment per Language</h3>
-                                <p class="mbr-text pb-3 mbr-fonts-style display-7">The following figure grounds on the question: <i>Which is the average positive and average negative score for each language?</i> This question derives from the research interest in the matter, whether based on the public opinion expressed in tweets, it can be inferred, how a milieu has perceived the political event. As the data shows, there are slight differences in the expressed opinion and a stronger like/dislike regarding the election outcome can be assumed. However, caution is required because cultures see the public expression of strong emotions very differently. A direct correlation between public outspeak and the perception is not necessarily provided.</p>
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                                <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
                                 <p class="mbr-text pt-2 mbr-fonts-style display-7">
                                 <canvas id="fig1"></canvas>
                               </p>
@@ -139,48 +139,15 @@
                             <div class="code-in-visualisation col-md-12">
                                   <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
 					  <div class="card-body">
-						  <h5 class="card-title">Which is the average positive and average negative score for each language?</h5>
+						  <h5 class="card-title">Blablablabla?</h5>
 						  <p class="card-text">
 						     <pre class="pre-wrapper">
 						     <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang
-  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
-  (SUM(?avg_score) AS ?tot_score)
-  (?tot_score/?tweet_count AS ?final_score)
-
-  WHERE {
-    {&#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.
-     ?tweet eur:hasAvgNegative ?n_score.
-      FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
-      BIND((?n_score) AS ?avg_score)
-     }
-  UNION
-  {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?p_score.
-      FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
-      BIND((?p_score) AS ?avg_score)
-  }
-  UNION
-    {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?p_score.
-    ?tweet eur:hasAvgNegative ?n_score.
-      BIND((?n_score+?p_score)/2 as ?avg_score)
-  }
-  }
-
-  GROUP BY (?lang)
+  QUERY
 	                                             </code>
 						     </pre>
 						  </p>
-            <p class="align-center pb-1 mbr-fonts-style display-7">For displaying the result in a graph, the data had to be cleaned. See the script on <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">GitHub</a>.</p>
+            <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla? <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">LINK</a>.</p>
 					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
 						  See the results
 					  </button>
@@ -192,7 +159,7 @@
 					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
 					       <div class="modal-content">
 						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">Which is the average positive and average negative score for each language?</h6>
+						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
 						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						     <span aria-hidden="true">&times;</span>
 						   </button>
@@ -213,8 +180,8 @@
                     <div id="tab2" class="tab-pane" role="tabpanel">
                         <div>
                             <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Development of Sentiment and Involvement</h3>
-                              <p class="mbr-text pb-3 mbr-fonts-style display-7">The second visualisation focuses on how the debate on Twitter has transformed over time. The guiding question for the query was: <i>How did emotions and interest change over time after the elections?</i> The hypothesis for this question is the interest would decline rapidly, and the discussion would become more neutral. The data shows how the interest indeed declined. Already on the second day, only half of the number of tweets were sent. Further, after the third day, the amount stagnated around 1.000 tweets. The average sentiment was always slightly more positive and has even become more neutral as predicted.</p>
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                              <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
                                 <p class="mbr-text pt-2 mbr-fonts-style display-7">
                                   <canvas id="fig2"></canvas>
                                 </p>
@@ -222,40 +189,11 @@
 			       <div class="code-in-visualisation col-md-12">
                                   <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
 					  <div class="card-body">
-						  <h5 class="card-title">How did emotions and interest change over time after the elections?</h5>
+						  <h5 class="card-title">Blablablabla?</h5>
 						  <p class="card-text">
 						     <pre>
 						     <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?date
-  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
-  (SUM(?avg_score) AS ?tot_avg_score)
-  (?tot_avg_score/?tweet_count AS ?daily_avg_score)
-
-  WHERE {
-    {?tweet eur:hasDate ?date.
-     ?tweet eur:hasAvgNegative ?n_score.
-     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
-     BIND((?n_score) AS ?avg_score)
-     }
-  UNION
-    {?tweet eur:hasDate ?date.
-     ?tweet eur:hasAvgPositive ?p_score.
-     FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
-     BIND((?p_score) AS ?avg_score)
-  }
-  UNION
-    {?tweet eur:hasDate ?date.
-     ?tweet eur:hasAvgPositive ?p_score.
-     ?tweet eur:hasAvgNegative ?n_score.
-     BIND((?n_score+?p_score)/2 as ?avg_score)
-  }
-  }
-
-  GROUP BY (?date)
-  ORDER BY ASC (?date)
+  QUERY
 	                                             </code>
 						     </pre>
 						  </p>
@@ -270,7 +208,7 @@
 					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
 					       <div class="modal-content">
 						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">How did emotions and interest change over time after the elections?</h6>
+						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
 						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						     <span aria-hidden="true">&times;</span>
 						   </button>
@@ -292,49 +230,23 @@
                     <div id="tab3" class="tab-pane" role="tabpanel">
                         <div>
                             <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Ambiguity of Tweets</h3>
-                              <p class="mbr-text pb-3 mbr-fonts-style display-7">The last graph represents to what degree tweets are two-sided or one-sided in regards to their sentiment. The query followed the descriptive question: <i>Which is the average negative and average positive score for each tweet?</i> We intended to understand whether statements in tweets are usually either strongly negative or strongly positive or if they typically are relatively neutral. The result shows a tendency of the tweets to be eighter strongly one-sided or two-sided with low intensity. Tweets which are strongly two-sided, do exist but are outliers. This phenomenon might be due to the length of tweets in which there is no space to express multiple positions.</p>
+                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                              <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
                                 <p class="mbr-text pt-2 mbr-fonts-style display-7">
                                     <canvas id="fig3"></canvas></p>
                             </div>
 			       <div class="code-in-visualisation col-md-12">
             <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
 					  <div class="card-body">
-						  <h5 class="card-title">Which is the average negative and average positive score for each individual tweet?</h5>
+						  <h5 class="card-title">Blablablabla?</h5>
 						  <p class="card-text">
 						     <pre>
 						     <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?tweet ?lang ?p_score ?n_score
-  WHERE {
-    {&#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.
-     ?tweet eur:hasAvgNegative ?n_score.
-      FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
-      BIND(("0") AS ?p_score)
-     }
-  UNION
-  {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?p_score.
-      FILTER NOT EXISTS {?tweet eur:hasAvgNegative ?n_score}
-      BIND(("0") AS ?n_score)
-  }
-    UNION
-    {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?p_score.
-    ?tweet eur:hasAvgNegative ?n_score.
-    }
-  }
+  QUERY
 	                                             </code>
 						     </pre>
 						  </p>
-            <p class="align-center pb-1 mbr-fonts-style display-7">For displaying the result in a graph, the data had to be cleaned. See the script on <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">GitHub</a>.</p>
+            <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">LINK</a>.</p>
 					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
 						  See the results
 					  </button>
@@ -346,7 +258,7 @@
 					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
 					       <div class="modal-content">
 						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">Which is the average negative and average positive score for each individual tweet?</h6>
+						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
 						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						     <span aria-hidden="true">&times;</span>
 						   </button>
@@ -378,7 +290,7 @@
       <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-l-8">
-                <h2><button class="coll-button align-center pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#sparql"><strong>Other SPARQL queries</strong></button></h2>
+                <h2><button class="coll-button align-center pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#sparql"><strong>Blablablabla</strong></button></h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Let's ask some more questions.</h3>
             </div>
         </div>
@@ -393,15 +305,10 @@
     <div class="card" id="CQ1">
       <div class="card-header">CQ1</div>
       <div class="card-body">
-        <h5 class="card-title">Which tweets have "de" identified as language by Twitter?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
     <pre>
 	    <code class="sql sparql-text">
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?tweet
-  WHERE {
-  ?tweet eur:hasLang "de".
-  }
+  QUERY
 	    </code>
     </pre>
 	</div>
@@ -416,7 +323,7 @@
      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
        <div class="modal-content">
          <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Which tweets have "de" identified as language by Twitter?</h6>
+           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -436,17 +343,10 @@
       <div class="card-header">CQ2
       </div>
       <div class="card-body">
-        <h5 class="card-title">Which tweets have the language set to "en"?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?tweet
-  WHERE {
-    &#60;2019/&#62; eur:lang &#60;2019/en/&#62;.
-    &#60;2019/en/&#62; eur:hasTweet ?tweet.
-  }
+  QUERY
 	    </code>
 	   </pre>
 	</div>
@@ -461,7 +361,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Which tweets have the language set to "en"?</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -482,17 +382,10 @@
     <div class="card" id="CQ3">
       <div class="card-header">CQ3</div>
       <div class="card-body">
-      <h5 class="card-title">How many tweets have been tweeted in “bg”?</h5>
+      <h5 class="card-title">Blablablabla?</h5>
 	<pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT (COUNT(?tweet) AS ?total_tweet)
-  WHERE {
-    &#60;2019/&#62; eur:lang &#60;2019/bg/&#62;.
-    &#60;2019/bg/&#62; eur:hasTweet ?tweet.
-  }
+  QUERY
 	    </code>
 	   </pre>
   </div>
@@ -507,7 +400,7 @@
     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h6 class="modal-title" id="exampleModalLongTitle">How many tweets have been tweeted in “bg”?</h6>
+          <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -527,19 +420,10 @@
     <div class="card" id="CQ4">
       <div class="card-header">CQ4</div>
       <div class="card-body">
-        <h5 class="card-title">Which languages have more than 10000 tweets?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang (COUNT(?tweet) AS ?tweet_count)
-  WHERE {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-  }
-  GROUP BY (?lang)
-  HAVING (?tweet_count &#62; 10000)
+  QUERY
 	    </code>
 	   </pre>
 </div>
@@ -554,7 +438,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Which languages have more than 10000 tweets?</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -575,18 +459,10 @@
     <div class="card" id="CQ5">
       <div class="card-header">CQ5</div>
       <div class="card-body">
-        <h5 class="card-title">In which of the languages identified by Twitter people tweeted more?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang (COUNT (?tweet) AS ?tweet_count)
-  WHERE {
-   ?tweet eur:hasLang ?lang.
-  }
-  GROUP BY (?lang)
-  ORDER BY DESC(?tweet_count)
-  LIMIT 1
+  QUERY
 	    </code>
 	   </pre>
   </div>
@@ -601,7 +477,7 @@
      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
        <div class="modal-content">
          <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">In which of the languages identified by Twitter people tweeted more?</h6>
+           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -620,30 +496,10 @@
     <div class="card" id="CQ6">
       <div class="card-header">CQ6</div>
       <div class="card-body">
-        <h5 class="card-title">Which language among the ones that received more than 100 tweets has used the highest number of emojis?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	<pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang
-  (COUNT(?tweet) AS ?tweet_count)
-  (COUNT(?e_tweet) AS ?e_tweet_count)
-  (ROUND(?e_tweet_count*100/?tweet_count) AS ?percentage)
-  WHERE {
-    {&#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.}
-  UNION
-  {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?e_tweet.
-    ?e_tweet eur:hasEmoji ?emoji.
-  }
-  }
-  GROUP BY (?lang)
-  HAVING (?tweet_count &#62; 100)
-  ORDER BY DESC (?percentage)
-  LIMIT 1
+  QUERY
 	    </code>
 	   </pre>
   </div>
@@ -658,7 +514,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Which language among the ones that received more than 100 tweets has used the highest number of emojis?</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -679,31 +535,10 @@
     <div class="card" id="CQ7">
       <div class="card-header">CQ7</div>
       <div class="card-body">
-        <h5 class="card-title">Which tweet with 'lang' set to 'da' has the highest average negative score?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	      <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?tweet ?avg_score
-  WHERE {
-    {&#60;2019/&#62; eur:lang &#60;2019/da/&#62;.
-     &#60;2019/da/&#62; eur:hasTweet ?tweet.
-     ?tweet eur:hasAvgNegative ?avg_score.
-     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
-    }
-    UNION
-    {
-    &#60;2019/&#62; eur:lang &#60;2019/da/&#62;.
-    &#60;2019/da/&#62; eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?p_score.
-    ?tweet eur:hasAvgNegative ?n_score.
-    BIND((?n_score+?p_score)/2 as ?avg_score)
-    FILTER(?avg_score &#60;0)
-    }
-  }
-  ORDER BY ASC (?avg_score)
-  LIMIT 1
+  QUERY
 	    </code>
 	   </pre>
 	</div>
@@ -718,7 +553,7 @@
      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
        <div class="modal-content">
          <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Which tweet with 'lang' set to 'da' has the highest average negative score?</h6>
+           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -738,26 +573,10 @@
     <div class="card" id="CQ8">
       <div class="card-header">CQ8</div>
       <div class="card-body">
-        <h5 class="card-title">Which tweet has the highest average negative score?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?tweet ?avg_score
-  WHERE {
-    {?tweet eur:hasAvgNegative ?avg_score.
-     FILTER NOT EXISTS {?tweet eur:hasAvgPositive ?p_score}
-    }
-    UNION
-    {?tweet eur:hasAvgPositive ?p_score.
-     ?tweet eur:hasAvgNegative ?n_score.
-     BIND((?n_score+?p_score)/2 as ?avg_score)
-     FILTER(?avg_score &#60;0)
-    }
-  }
-  ORDER BY ASC (?avg_score)
-  LIMIT 1
+  QUERY
 	    </code>
 	  </pre>
 	</div>
@@ -772,7 +591,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Which tweet has the highest average negative score?</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -793,39 +612,10 @@
     <div class="card" id="CQ9">
      <div class="card-header">CQ9</div>
       <div class="card-body">
-        <h5 class="card-title">Which language expressed the highest percentage of average positive tweets?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang
-  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
-  (COUNT(DISTINCT ?p_tweet) AS ?positive_tweets)
-  (ROUND(?positive_tweets*100/?tweet_count) AS ?percentage)
-  WHERE {
-    {&#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.}
-  UNION
-  {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?avg_score.
-    BIND((?tweet) AS ?p_tweet)
-  }
-  UNION
-  {  &#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.
-     ?tweet eur:hasAvgPositive ?p_score.
-     ?tweet eur:hasAvgNegative ?n_score.
-     BIND((?n_score+?p_score)/2 as ?avg_score)
-     BIND((?tweet) AS ?p_tweet)
-     FILTER(?avg_score &#62; 0)
-  }
-  }
-  GROUP BY (?lang)
-  ORDER BY DESC (?percentage)
-  LIMIT 1
+  QUERY
 	    </code>
 	  </pre>
 	</div>
@@ -840,7 +630,7 @@
      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
        <div class="modal-content">
          <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Which language expressed the highest percentage of average positive tweets?</h6>
+           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
@@ -859,39 +649,10 @@
     <div class="card" id="CQ10">
       <div class="card-header">CQ10</div>
       <div class="card-body">
-        <h5 class="card-title">Which is the percentage (rounded to its integer) of average positive tweets for each language?</h5>
+        <h5 class="card-title">Blablablabla?</h5>
 	  <pre>
 	    <code class="sql sparql-text">
-  BASE &#60;http://www.europinion.com/&#62;
-  PREFIX eur: &#60;http://www.europinion.com/&#62;
-
-  SELECT ?lang
-  (COUNT(DISTINCT ?tweet) AS ?tweet_count)
-  (COUNT(DISTINCT ?p_tweet) AS ?positive_tweets)
-  (ROUND(?positive_tweets*100/?tweet_count) AS ?percentage)
-
-  WHERE {
-    {&#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.}
-  UNION
-  {
-    &#60;2019/&#62; eur:lang ?lang.
-    ?lang eur:hasTweet ?tweet.
-    ?tweet eur:hasAvgPositive ?score.
-    BIND((?tweet) AS ?p_tweet)
-  }
-    UNION
-  {  &#60;2019/&#62; eur:lang ?lang.
-     ?lang eur:hasTweet ?tweet.
-     ?tweet eur:hasAvgPositive ?p_score.
-     ?tweet eur:hasAvgNegative ?n_score.
-     BIND((?n_score+?p_score)/2 as ?avg_score)
-     BIND((?tweet) AS ?p_tweet)
-     FILTER(?avg_score &#62; 0)
-  }
-  }
-  GROUP BY (?lang)
-  ORDER BY DESC (?percentage)
+  QUERY
 	    </code>
 	  </pre>
 	</div>
@@ -907,7 +668,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Which is the percentage (rounded to its integer) of average positive tweets for each language?</h6>
+        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
