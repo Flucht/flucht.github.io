@@ -522,8 +522,3 @@ div[data-for^="input-range"] input {
 	top: 0;
 	left: -2400px;
 }
-
-#mapid {
-  height: 300px;
-  width: 100%;
-}
