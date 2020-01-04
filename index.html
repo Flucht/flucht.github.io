@@ -101,8 +101,8 @@
 
 <section class="mbr-section article content1 cid-rvhdtl5NQi" id="content1-c">
     <div class="container">
-      <div class="media-container-row">
-        <div id="map"></div>
+      <div id="media-container-row">
+        <div class="map" id="map"></div>
       </div>
     </div>
 </section>
@@ -236,135 +236,11 @@
   <script src="assets/theme/js/script.js"></script>
 
   <script type="text/javascript" src="data/map-data.js"></script>
+  <script type="text/javascript" src="scripts/map.js"></script>
 
-<script type="text/javascript">
-
-var mbAttr = 'Map &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>, ' +
-    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-    'Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-  mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-
-  var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v9', attribution: mbAttr}),
-    streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11',   attribution: mbAttr});
-
-	var map = L.map('map',{center: [35, 20], zoom: 2, layers: [streets]});
-
-	// control that shows state info on hover
-	var info = L.control();
-
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
-
-	info.update = function (props) {
-		this._div.innerHTML = '<h4>Total Displaced Population</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + props.hasTotal + ' people'
-			: 'Hover over a state');
-	};
-
-	info.addTo(map);
-
-  var baseMaps = {
-      "Grayscale": grayscale,
-      "Streets": streets
-  };
-
-  L.control.layers(baseMaps).addTo(map);
-
-	// get color depending on total displaced population
-	function getColor(d) {
-		return d > 2000000 ? '#800026' :
-				d > 1000000  ? '#BD0026' :
-				d > 500000  ? '#E31A1C' :
-				d > 250000  ? '#FC4E2A' :
-				d > 100000   ? '#FD8D3C' :
-				d > 50000   ? '#FEB24C' :
-				d > 25000   ? '#FED976' :
-							'#FFEDA0';
-	}
-
-	function style(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'white',
-			dashArray: '3',
-			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.hasTotal)
-		};
-	}
-
-	function highlightFeature(e) {
-		var layer = e.target;
-
-		layer.setStyle({
-			weight: 5,
-			color: '#666',
-			dashArray: '',
-			fillOpacity: 0.7
-		});
-
-		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-			layer.bringToFront();
-		}
-
-		info.update(layer.feature.properties);
-	}
-
-	var geojson;
-
-	function resetHighlight(e) {
-		geojson.resetStyle(e.target);
-		info.update();
-	}
-
-	function zoomToFeature(e) {
-		map.fitBounds(e.target.getBounds());
-	}
-
-	function onEachFeature(feature, layer) {
-		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight,
-			click: zoomToFeature
-		});
-	}
-
-	geojson = L.geoJson(nationsData, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
-
-	map.attributionControl.addAttribution('Data &copy; <a href="http://flucht.github.io/">Flucht</a>');
-
-
-	var legend = L.control({position: 'bottomright'});
-
-	legend.onAdd = function (map) {
-
-		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 25000, 50000, 100000, 250000, 500000, 1000000, 2000000],
-			labels = [],
-			from, to;
-
-		for (var i = 0; i < grades.length; i++) {
-			from = grades[i];
-			to = grades[i + 1];
-
-			labels.push(
-				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + to : '+'));
-		}
-
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
-
-	legend.addTo(map);
-
-</script>
+  <script>
+    window.onload = updateMap('hasTotal')
+  </script>
 
 </body>
 </html>
