@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+ xmlns:time="http://www.w3.org/2006/time#"
+ xmlns:dct="http://purl.org/dc/terms/"
+ xmlns:dcat="http://www.w3.org/ns/dcat#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+ xmlns:tema="http://datos.gob.es/kos/sector-publico/sector/"
+ xmlns:auto="http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/"
+ xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<dcat:Catalog rdf:about="https://flucht.github.io">
+  <dct:identifier>https://flucht.github.io</dct:identifier>
+  <dct:title>Flucht catalog</dct:title>
+  <dct:description>The Flucht catalog contains datsets concerning the push factors of refugees, i.e. the political or economical situation in the country of origin. The catalog was created within a course at the Univeristy of Bologna and is not maintained. However, the datasets used for this catalog are maintained by the linked institutions.</dct:description>
+  <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-03T00:00:00Z</dct:issued>
+  <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-03T09:38:45Z</dct:modified>
+  <dct:language>en</dct:language>
+  <foaf:homepage rdf:resource="https://flucht.github.io/catalog"/>
+  <dct:license rdf:resource="https://flucht.github.io/license"/>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/1">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/1</dct:identifier>
+      <dct:title>UNHCR – Persons of Concerns</dct:title>
+      <dct:description>The dataset Persons of Concerns is published by UNHCR and contains the information about where refugees, asylum-seekers, returned refugees, internally displaced persons, returned IDPs, stateless persons and other persons of concerns are currently residing and originally coming from.</dct:description>
+      <dcat:keyword>refugees</dcat:keyword>
+      <dcat:keyword>asylum-seekers</dcat:keyword>
+      <dcat:keyword>internally displaced people</dcat:keyword>
+      <dcat:keyword>stats</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>UNHCR – The UN Refugee Agency</foaf:name>
+            <foaf:mbox>stats@unhcr.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>http://popstats.unhcr.org/en/persons_of_concern</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The distribution offers to filter and search the dataset before downloading.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://popstats.unhcr.org/en/persons_of_concern.csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license>No license</dct:license>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/2">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/2</dct:identifier>
+      <dct:title>World Bank – Constant GDP per Capita</dct:title>
+      <dct:description>The dataset is published by the World Bank. The GDP per capita is the gross domestic product divided by midyear population. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. The constant GDP assess for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>gross domestic product</dcat:keyword>
+      <dcat:keyword>GDP</dcat:keyword>
+      <dcat:keyword>GDP per capita</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.PCAP.KD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.KD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/3">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/3</dct:identifier>
+      <dct:title>World Bank – Current GDP per Capita</dct:title>
+      <dct:description>The dataset is published by the World Bank. The GDP per capita is the gross domestic product divided by midyear population. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. The current GDP per capita represents the values as they were in the year of occurence. For example, values from 1960 are represented as they were in 1960 without assessing for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>gross domestic product</dcat:keyword>
+      <dcat:keyword>GDP</dcat:keyword>
+      <dcat:keyword>GDP per capita</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.PCAP.CD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.CD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/4">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/4</dct:identifier>
+      <dct:title>World Bank – Constant GDP</dct:title>
+      <dct:description>The dataset is published by the World Bank. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. The constant GDP assess for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>gross domestic product</dcat:keyword>
+      <dcat:keyword>GDP</dcat:keyword>
+      <dcat:keyword>constant</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.MKTP.KD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.GDP.MKTP.KD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/5">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/5</dct:identifier>
+      <dct:title>World Bank – Current GDP</dct:title>
+      <dct:description>The dataset is published by the World Bank. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. The current GDP does not assess for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>gross domestic product</dcat:keyword>
+      <dcat:keyword>GDP</dcat:keyword>
+      <dcat:keyword>constant</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.MKTP.CD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.GDP.MKTP.CD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/6">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/6</dct:identifier>
+      <dct:title>World Bank – GDP Growth</dct:title>
+      <dct:description>The dataset is published by the World Bank. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. This dataset contains the annual percentage growth of the GDP.</dct:description>
+      <dcat:keyword>gross domestic product</dcat:keyword>
+      <dcat:keyword>GDP</dcat:keyword>
+      <dcat:keyword>growth</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.GDP.MKTP.KD.ZG?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/7">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/7</dct:identifier>
+      <dct:title>World Bank – Unemployment ILO Estimate</dct:title>
+      <dct:description>The dataset is published by the World Bank. The data contains information about unemployment rates (%) per country. Considering every unemployed person (min. 15 years old). The International Labour Organization (ILO) estimate is harmonising different definitions of unemployment.</dct:description>
+      <dcat:keyword>unemployment</dcat:keyword>
+      <dcat:keyword>International Labour Organization</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/SL.UEM.TOTL.ZS?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/8">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/8</dct:identifier>
+      <dct:title>World Bank – Unemployment National Estimate</dct:title>
+      <dct:description>The dataset is published by the World Bank. The data contains information about unemployment rates (%) per country. The national unemployment estimate is based on the numbers which countries report based on their definition of unemployment.</dct:description>
+      <dcat:keyword>unemployment</dcat:keyword>
+      <dcat:keyword>International Labour Organization</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/SL.UEM.TOTL.NE.ZS?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/9">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/9</dct:identifier>
+      <dct:title>World Bank – Constant Income per Capita</dct:title>
+      <dct:description>The dataset is published by the World Bank. The data contains information about the incoming money flow of nations. The money flow is created by, for example, selling national resources. For the income per capita the total income is divided by midyear population. The constant income assesses for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>income</dcat:keyword>
+      <dcat:keyword>commodities</dcat:keyword>
+      <dcat:keyword>per capita</dcat:keyword>
+      <dcat:keyword>constant</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.ADJ.NNTY.PC.KD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.ADJ.NNTY.PC.KD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/10">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/10</dct:identifier>
+      <dct:title>World Bank – Current Income per Capita</dct:title>
+      <dct:description>The dataset is published by the World Bank. The data contains information about the incoming money flow of nations. The money flow is created by, for example, selling national resources. For the income per capita the total income is divided by midyear population. The current income does not assesses for inflation. Values are expressed in US$.</dct:description>
+      <dcat:keyword>income</dcat:keyword>
+      <dcat:keyword>commodities</dcat:keyword>
+      <dcat:keyword>per capita</dcat:keyword>
+      <dcat:keyword>current</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.ADJ.NNTY.CD</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.ADJ.NNTY.CD?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/11">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/11</dct:identifier>
+      <dct:title>World Bank – Income Growth</dct:title>
+      <dct:description>The dataset is published by the World Bank. The data contains information about the incoming money flow of nations. The money flow is created by, for example, selling national resources. The data represent the income growth. Values are expressed in US$.</dct:description>
+      <dcat:keyword>income</dcat:keyword>
+      <dcat:keyword>commodities</dcat:keyword>
+      <dcat:keyword>per capita</dcat:keyword>
+      <dcat:keyword>current</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>The World Bank</foaf:name>
+            <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://data.worldbank.org/indicator/NY.ADJ.NNTY.PC.KD.ZG</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The World Bank offers the download of the dataset under the CC BY 4.0 license.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://api.worldbank.org/v2/en/indicator/NY.ADJ.NNTY.PC.KD.ZG?downloadformat=csv</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/12">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/12</dct:identifier>
+      <dct:title>Global Terrorism Database</dct:title>
+      <dct:description>The dataset is published by the CHC Insurance Services Ltd. The data contains information about domestic and international terrorist attacks around the world from 1970 through 2018.</dct:description>
+      <dcat:keyword>terrorism</dcat:keyword>
+      <dcat:keyword>attacks</dcat:keyword>
+      <dcat:keyword>deaths</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:creator>
+        <foaf:Organization>
+            <foaf:name>National Consortium for the Study of Terrorism and Responses to Terrorism</foaf:name>
+            <foaf:mbox>infostart@start.umd.edu</foaf:mbox>
+        </foaf:Organization>
+      </dct:creator>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://www.start.umd.edu/gtd/</dct:identifier>
+          <dct:title>A platform for requesting the dataset</dct:title>
+          <dct:description>The Global Terrorism Database requires to be registered to download the dataset. Reusing the dataset is highly restricted by the End User Agreement.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.start.umd.edu/gtd/</dcat:downloadURL>
+          <dcat:format>html</dcat:format>
+          <dct:license rdf:resource="https://www.start.umd.edu/gtd/end-user-agreement/"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/13">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/13</dct:identifier>
+      <dct:title>UCDP – Georeferenced Event Dataset</dct:title>
+      <dct:description>The dataset is published by the Uppsala Conflict Data Program, a program organised by the Uppsala Universitet. The data covers individual events of organized violence (phenomena of lethal violence occurring at a given time and place).</dct:description>
+      <dcat:keyword>terrorism</dcat:keyword>
+      <dcat:keyword>war</dcat:keyword>
+      <dcat:keyword>violence</dcat:keyword>
+      <dcat:keyword>deaths</dcat:keyword>
+      <dcat:keyword>wounded</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>Uppsala Conflict Data Program</foaf:name>
+            <foaf:mbox>ucdp@pcr.uu.se</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://ucdp.uu.se/downloads/index.html#ged_global</dct:identifier>
+          <dct:title>A distribution for this dataset in CSV format</dct:title>
+          <dct:description>The UCDP offers their data in several different file formats including CSV, EXCEL, SQL, R and JSON. Previous versions of the data can be accessed on the website as well.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ucdp.uu.se/downloads/ged/ged191-csv.zip</dcat:downloadURL>
+          <dcat:mediaType>text/csv</dcat:mediaType>
+          <dct:license>No license</dct:license>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+  <dcat:dataset>
+    <dcat:Dataset rdf:about="https://flucht.github.io/catalog/datasets/14">
+      <dct:identifier>https://flucht.github.io/catalog/datasets/14</dct:identifier>
+      <dct:title>EIU – Democracy Indices</dct:title>
+      <dct:description>The dataset is published by Gapminder and created by The Economist Intelligence Unit. The Democracy Indices measure the quality of the democracy in a country.</dct:description>
+      <dcat:keyword>democracy</dcat:keyword>
+      <dcat:keyword>politics</dcat:keyword>
+      <dcat:keyword>voting</dcat:keyword>
+      <dcat:keyword>freedom</dcat:keyword>
+      <dcat:keyword>participation</dcat:keyword>
+      <dct:language>en</dct:language>
+      <dct:publisher>
+        <foaf:Organization>
+            <foaf:name>Gapminder</foaf:name>
+            <foaf:mbox>info@gapminder.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:publisher>
+      <dct:creator>
+        <foaf:Organization>
+            <foaf:name>The Economist Intelligence Unit</foaf:name>
+            <foaf:mbox>london@eiu.com</foaf:mbox>
+        </foaf:Organization>
+      </dct:creator>
+      <dcat:distribution>
+        <dcat:Distribution>
+          <dct:identifier>https://www.gapminder.org/data/documentation/democracy-index/</dct:identifier>
+          <dct:title>A distribution for this dataset in the proprietary EXCEL format</dct:title>
+          <dct:description>The file contains several sheets. Only sheets starting with the word "data" are covered by the Gapminder license. Other sheets are included for documentation purpose, and may include data that is governed by other licenses.</dct:description>
+          <dcat:downloadURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.gapm.io/dxlsdemocrix</dcat:downloadURL>
+          <dct:format>
+            <dct:IMT>
+              <rdf:value>application/excel</rdf:value>
+            </dct:IMT>
+          </dct:format>
+          <dct:license rdf:resource="https://docs.google.com/document/d/1-RmthhS2EPMK_HIpnPctcXpB0n7ADSWnXa5Hb3PxNq4/edit"/>
+        </dcat:Distribution>
+      </dcat:distribution>
+    </dcat:Dataset>
+  </dcat:dataset>
+</dcat:Catalog>
+</rdf:RDF>
