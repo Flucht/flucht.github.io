@@ -9,6 +9,10 @@
  xmlns:auto="http://datos.gob.es/recurso/sector-publico/territorio/Autonomia/"
  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<foaf:Agent>
+ <foaf:name>Severin Josef Burg</foaf:name>
+ <foaf:name>Eleonora Peruch</foaf:name>
+</foaf:Agent>
 <dcat:Catalog rdf:about="https://flucht.github.io">
   <dct:identifier>https://flucht.github.io</dct:identifier>
   <dct:title>Flucht catalog</dct:title>
