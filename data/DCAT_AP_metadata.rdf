@@ -38,6 +38,12 @@
         <foaf:mbox>stats@unhcr.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>UNHCR – The UN Refugee Agency</foaf:name>
+        <foaf:mbox>stats@unhcr.org</foaf:mbox>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>http://popstats.unhcr.org/en/persons_of_concern</dct:identifier>
@@ -74,6 +80,15 @@
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>World Bank national</foaf:name>
+        <foaf:mbox>data@worldbank.org</foaf:mbox>
+      </foaf:Organization>
+      <foaf:Organization>
+        <foaf:name>National accounts - OECD</foaf:name>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.PCAP.KD</dct:identifier>
@@ -99,6 +114,15 @@
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>World Bank national</foaf:name>
+        <foaf:mbox>data@worldbank.org</foaf:mbox>
+      </foaf:Organization>
+      <foaf:Organization>
+        <foaf:name>National accounts - OECD</foaf:name>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG</dct:identifier>
@@ -123,6 +147,16 @@
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>International Labour Organization</foaf:name>
+        <foaf:mbox>ilo@ilo.org</foaf:mbox>
+      </foaf:Organization>
+      <foaf:Organization>
+        <foaf:name>ILOSTAT</foaf:name>
+        <foaf:mbox>ilo@ilo.org</foaf:mbox>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS</dct:identifier>
@@ -147,6 +181,16 @@
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>International Labour Organization</foaf:name>
+        <foaf:mbox>ilo@ilo.org</foaf:mbox>
+      </foaf:Organization>
+      <foaf:Organization>
+        <foaf:name>ILOSTAT</foaf:name>
+        <foaf:mbox>ilo@ilo.org</foaf:mbox>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS</dct:identifier>
@@ -173,6 +217,12 @@
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>The World Bank</foaf:name>
+        <foaf:mbox>data@worldbank.org</foaf:mbox>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://data.worldbank.org/indicator/NY.ADJ.NNTY.PC.KD</dct:identifier>
@@ -198,6 +248,12 @@
         <foaf:name>The World Bank</foaf:name>
         <foaf:mbox>data@worldbank.org</foaf:mbox>
       </foaf:Organization>
+      <dct:creator>
+        <foaf:Organization>
+          <foaf:name>The World Bank</foaf:name>
+          <foaf:mbox>data@worldbank.org</foaf:mbox>
+        </foaf:Organization>
+      </dct:creator>
     </dct:publisher>
     <dcat:distribution>
       <dcat:Distribution>
@@ -230,6 +286,11 @@
     <dcat:keyword>attacks</dcat:keyword>
     <dcat:keyword>deaths</dcat:keyword>
     <dct:language>en</dct:language>
+    <dct:publisher>
+      <foaf:Organization>
+        <foaf:name>CHC Insurance Services Ltd</foaf:name>
+      </foaf:Organization>
+    </dct:publisher>
     <dct:creator>
       <foaf:Organization>
         <foaf:name>National Consortium for the Study of Terrorism and Responses to Terrorism</foaf:name>
@@ -274,6 +335,12 @@
         <foaf:mbox>ucdp@pcr.uu.se</foaf:mbox>
       </foaf:Organization>
     </dct:publisher>
+    <dct:creator>
+      <foaf:Organization>
+        <foaf:name>Uppsala Conflict Data Program</foaf:name>
+        <foaf:mbox>ucdp@pcr.uu.se</foaf:mbox>
+      </foaf:Organization>
+    </dct:creator>
     <dcat:distribution>
       <dcat:Distribution>
         <dct:identifier>https://ucdp.uu.se/downloads/index.html#ged_global</dct:identifier>
@@ -338,9 +405,17 @@
   <dct:identifier>https://flucht.github.io</dct:identifier>
   <dct:title>Flucht dataset</dct:title>
   <dct:description>The Flucht dataset contains datsets from catalogs concerning the push factors of refugees, i.e. the political or economical situation in the country of origin. The catalog was created within a course at the University of Bologna and is not maintained. However, the datasets used for this catalog are maintained by the linked institutions.</dct:description>
+  <dcat:keyword>refugees</dcat:keyword>
+  <dcat:keyword>open data</dcat:keyword>
+  <dcat:keyword>economic factors</dcat:keyword>
+  <dcat:keyword>political factors</dcat:keyword>
   <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-03T00:00:00Z</dct:issued>
   <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-03T09:38:45Z</dct:modified>
   <dct:language>en</dct:language>
   <dct:license rdf:resource="https://flucht.github.io/license"/>
+  <dct:publisher>University of Bologna</dct:publisher>
+  <dct:creator>Severin Josef Burg</dct:creator>
+  <dct:creator>Eleonora Peruch</dct:creator>
+  <foaf:page rdf:about="https://flucht.github.io/documentation.html"/>
 </dcat:Dataset>
 </rdf:RDF>
