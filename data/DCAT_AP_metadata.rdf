@@ -413,9 +413,26 @@
   <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-01-03T09:38:45Z</dct:modified>
   <dct:language>en</dct:language>
   <dct:license rdf:resource="https://flucht.github.io/license"/>
-  <dct:publisher>University of Bologna</dct:publisher>
-  <dct:creator>Severin Josef Burg</dct:creator>
-  <dct:creator>Eleonora Peruch</dct:creator>
+  <dct:publisher>
+   <foaf:Person>
+    <foaf:name>Severin Josef Burg</foaf:name>
+    <foaf:mbox>severinjosef.burg@studio.unibo.it</foaf:mbox>
+   </foaf:Person>
+   <foaf:Person>
+    <foaf:name>Eleonora Peruch</foaf:name>
+    <foaf:mbox>eleonora.peruch@studio.unibo.it</foaf:mbox>
+   </foaf:Person>
+  </dct:publisher>
+  <dct:creator>
+   <foaf:Person>
+    <foaf:name>Severin Josef Burg</foaf:name>
+    <foaf:mbox>severinjosef.burg@studio.unibo.it</foaf:mbox>
+   </foaf:Person>
+   <foaf:Person>
+    <foaf:name>Eleonora Peruch</foaf:name>
+    <foaf:mbox>eleonora.peruch@studio.unibo.it</foaf:mbox>
+   </foaf:Person>
+  </dct:creator>
   <foaf:page rdf:about="https://flucht.github.io/documentation.html"/>
 </dcat:Dataset>
 </rdf:RDF>
