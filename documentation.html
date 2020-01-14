@@ -20,11 +20,6 @@ w<!DOCTYPE html>
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
-  <link rel="stylesheet" href="assets/theme/css/leaflet.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
-
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
-
   <!-- Highlight.js -->
   <link rel="stylesheet" href="assets/highlightjs/highlight.css">
   <script src="assets/highlightjs/highlight.pack.js"></script>
@@ -73,7 +68,7 @@ w<!DOCTYPE html>
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-l-8">
-              <h2 class="align-center pb-3 mbr-fonts-style display-2"><strong>Code</strong></h2>
+              <h2 class="align-center pb-3 mbr-fonts-style display-2"><strong>Documentation</strong></h2>
               <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">The beauty of Python.</h3>
               </br>
               </br>
@@ -89,36 +84,6 @@ w<!DOCTYPE html>
     <div class="container">
         <div class="media-container-row">
             <div class="col-12 col-l-8">
-                <ul class="nav pb-4 nav-tabs" role="tablist">
-                    <!-- <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab0" aria-selected="true" onclick="window.dispatchEvent(new Event('resize'))">Acquiring</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab1" aria-selected="true" onclick="window.dispatchEvent(new Event('resize'))">Cleaning</a></li> -->
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab2" aria-selected="true" onclick="updateMap('hasDeathUCDP')">hasDeathUCDP</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasTotal')">hasTotal</a></li>
-
-
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPCapConstant')">hasGDPCapConstant</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPCapCurrent')">hasGDPCapCurrent</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPCapGrowth')">hasGDPCapGrowth</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPConstant')">hasGDPConstant</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPCurrent')">hasGDPCurrent</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasGDPGrowth')">hasGDPGrowth</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasIncomeCapConstant')">hasIncomeCapConstant</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasIncomeCapCurrent')">hasIncomeCapCurrent</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasIncomeCapGrowth')">hasIncomeCapGrowth</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasUnemploymentILO')">hasUnemploymentILO</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasUnemploymentNational')">hasUnemploymentNational</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasDemocracy')">hasDemocracy</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasDeathsTerrorism')">hasDeathsTerrorism</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-w_tab3" aria-selected="true" onclick="updateMap('hasWoundedTerrorism')">hasWoundedTerrorism</a></li>
-                </ul>
-
-                <section class="mbr-section article content1 cid-rvhdtl5NQi" id="content1-c">
-                    <div class="container">
-                      <div id="media-container-row">
-                        <div class="map" id="map"></div>
-                      </div>
-                    </div>
-                </section>
                 <div class="tab-content">
                     <div id="tab1" class="tab-pane in active" role="tabpanel">
                         <div class="row">
@@ -204,10 +169,6 @@ w<!DOCTYPE html>
   <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
-
-  <script type="text/javascript" src="data/map-data.js"></script>
-  <script type="text/javascript" src="scripts/map.js"></script>
-
 
 </body>
 </html>

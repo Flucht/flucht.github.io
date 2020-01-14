@@ -1,4 +1,6 @@
-var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'type': '$'}, 'hasGDPCapCurrent':{'title':'Total Displaced Population', 'type': 'People'}, 'hasGDPCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasGDPConstant':{'title':'Total Displaced Population', 'type': 'People'}, 'hasGDPCurrent':{'title':'Total Displaced Population', 'type': 'People'}, 'hasGDPGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasIncomeCapConstant':{'title':'Total Displaced Population', 'type': 'People'}, 'hasIncomeCapCurrent':{'title':'Total Displaced Population', 'type': 'People'}, 'hasIncomeCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentILO':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentNational':{'title':'Total Displaced Population', 'type': 'People'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Total Displaced Population', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Total Displaced Population', 'type': 'People'}}
+var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'type': '$'},  'hasGDPCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasIncomeCapConstant':{'title':'Total Displaced Population', 'type': 'People'},  'hasIncomeCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentILO':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentNational':{'title':'Total Displaced Population', 'type': 'People'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Total Displaced Population', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Total Displaced Population', 'type': 'People'}}
+
+var years = ["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"]
 
 function updateMap(predicate) {
   document.getElementById('media-container-row').innerHTML = "<div class='map' id='map'></div>";
@@ -37,19 +39,18 @@ function updateMap(predicate) {
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>' + info_labels[predicate].title + '</h4>' +  (props ?
-      '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]) + ' ' + info_labels[predicate].type
+      '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]["total"]) + ' ' + info_labels[predicate].type
       : 'Hover over a state');
   };
 
   info.addTo(map);
 
-  // get color depending on total displaced population
   var max
   var step = []
   function getMax(arr, prop) {
     for (var i=0 ; i<arr.length ; i++) {
-      if (max == null || parseFloat(arr[i]['properties'][prop]) > parseFloat(max)){
-        max = arr[i]['properties'][prop];
+      if (max == null || parseFloat(arr[i]['properties'][prop]["total"]) > parseFloat(max)){
+        max = arr[i]['properties'][prop]["total"];
         console.log(max)
       }
     }
@@ -87,8 +88,42 @@ function updateMap(predicate) {
       color: 'white',
       dashArray: '3',
       fillOpacity: 0.7,
-      fillColor: getColor(feature.properties[predicate])
+      fillColor: getColor(feature.properties[predicate]["total"])
     };
+  }
+
+  function chartData(props, labels) {
+    data = []
+
+    years.forEach(
+      year => data.push(props[predicate][year])
+    )
+
+    return data
+  }
+
+  function updateChart(props) {
+    new Chart(document.getElementById("map-graph"),{
+      "type":"bar",
+      "data":{
+        "labels":years,
+        "datasets":[{
+          "label":info_labels[predicate].title,
+          "data": chartData(props),
+          "fill":false,
+          "backgroundColor":"rgba(255, 99, 132, 0.2)",
+          "borderColor":"rgb(255, 99, 132)",
+          "borderWidth":1}]},
+        "options":{
+          "scales":{
+            "yAxes":[{
+              "ticks":{
+                "beginAtZero":true
+              }
+            }]
+          }
+        }
+      });
   }
 
   function highlightFeature(e) {
@@ -106,6 +141,7 @@ function updateMap(predicate) {
     }
 
     info.update(layer.feature.properties);
+    updateChart(layer.feature.properties);
   }
 
   var geojson;

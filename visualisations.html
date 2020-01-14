@@ -21,6 +21,12 @@
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/sparql/style.css" type="text/css">
 
+  <!-- Leaflet.js -->
+  <link rel="stylesheet" href="assets/visualisations/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
@@ -29,31 +35,30 @@
   <script src="assets/highlightjs/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 
-
   <!-- D3SPARQL.js -->
   <script src="assets/d3sparql/d3.v3.min.js"></script>
   <script src="assets/d3sparql/script.js"></script>
 
   <script>
-    function preload(filename, callback) {
-      var Connect = new XMLHttpRequest();
-      var filePath = "data/queries/tables/" + filename + ".json";
-      Connect.open("GET", filePath, false);
-      Connect.setRequestHeader("Content-Type", "text/json");
-      Connect.send(null);
-      var jsonFile = Connect.responseText;
-      callback(filename, JSON.parse(jsonFile));
+  function preload(filename, callback) {
+    var Connect = new XMLHttpRequest();
+    var filePath = "data/queries/tables/" + filename + ".json";
+    Connect.open("GET", filePath, false);
+    Connect.setRequestHeader("Content-Type", "text/json");
+    Connect.send(null);
+    var jsonFile = Connect.responseText;
+    callback(filename, JSON.parse(jsonFile));
+  }
+  function exec(filename, callback) {
+    preload(filename, render);
+  }
+  function render(filename, json) {
+    var selectorID = "#result" + filename
+    var config = {
+      "selector": selectorID
     }
-    function exec(filename, callback) {
-      preload(filename, render);
-    }
-    function render(filename, json) {
-      var selectorID = "#result" + filename
-      var config = {
-        "selector": selectorID
-      }
-      d3sparql.htmltable(json, config)
-    }
+    d3sparql.htmltable(json, config)
+  }
   </script>
 </head>
 <body>
@@ -62,847 +67,898 @@
 
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <div class="menu-logo">
-          <div class="navbar-brand">
-              <span class="navbar-logo">
-                  <a href="index.html">
-                       <img src="assets/images/logo.png" alt="Illustration of people fleeing" title="" style="height: 3rem;">
-                  </a>
-              </span>
-              <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Flucht</a></span>
-          </div>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="index.html">Home</a>
-                </li><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="workflow.html">Workflow</a>
-                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="documentation.html">Documentation</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="data.html">Data</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="visualisations.html">Visualisations</a></li></ul>
+      </button>
+      <div class="menu-logo">
+        <div class="navbar-brand">
+          <span class="navbar-logo">
+            <a href="index.html">
+              <img src="assets/images/logo.png" alt="Illustration of people fleeing" title="" style="height: 3rem;">
+            </a>
+          </span>
+          <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-4" href="index.html">Flucht</a></span>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+          <a class="nav-link link text-white display-4" href="index.html">Home</a>
+        </li><li class="nav-item">
+          <a class="nav-link link text-white display-4" href="workflow.html">Workflow</a>
+        </li><li class="nav-item"><a class="nav-link link text-white display-4" href="documentation.html">Documentation</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="data.html">Data</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="visualisations.html">Visualisations</a></li></ul>
 
-        </div>
+      </div>
     </nav>
-</section>
-
-<div class="accordion bg-transparent" id="menu"> <!-- start of accordion -->
-<div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent"> <!-- div containing the first collapsible -->
-
-    <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
-
-
-      <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-l-8">
-                <h2><button class="coll-button align-center mb-0 pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#visualisations"><strong>Queries</strong></button></h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Sparkling SPARQL results.</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div id="visualisations" class="collapse show" aria-labelledby="headingOne" data-parent="#menu">
-  <section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
-
-
-
-
-    <div class="container">
-        <p class="mbr-text mbr-fonts-style display-7">Blablablabla</p>
-        <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> repository.</p>
-        <div class="media-container-row">
-            <div class="col-12 col-l-8">
-                <ul class="nav pt-3 nav-tabs" role="tablist">
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">
-                            Fig. 1</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Fig. 2</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="true">
-                            Fig. 3</a></li>
-
-
-
-                </ul>
-                <div class="tab-content">
-                    <div id="tab1" class="tab-pane in active" role="tabpanel">
-                        <div>
-                            <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                                <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
-                                <canvas id="fig1"></canvas>
-                              </p>
-			    </div>
-                            <div class="code-in-visualisation col-md-12">
-                                  <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
-					  <div class="card-body">
-						  <h5 class="card-title">Blablablabla?</h5>
-						  <p class="card-text">
-						     <pre class="pre-wrapper">
-						     <code class="sql sparql-text">
-  QUERY
-	                                             </code>
-						     </pre>
-						  </p>
-            <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla? <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">LINK</a>.</p>
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
-						  See the results
-					  </button>
-					</div>
-				    </div>
-
-					   <!-- Modal -->
-					   <div class="modal fade" id="modalvisualisation1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-					       <div class="modal-content">
-						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						     <span aria-hidden="true">&times;</span>
-						   </button>
-						 </div>
-						 <div class="modal-body table-json">
-						   <div id="resultvisualisation_1"></div>
-						 </div>
-						 <div class="modal-footer">
-						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-						 </div>
-					       </div>
-					     </div>
-					   </div>
-				</div>
-                            </div>
-                        </div> <!-- end tab 1-->
-
-                    <div id="tab2" class="tab-pane" role="tabpanel">
-                        <div>
-                            <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                              <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
-                                  <canvas id="fig2"></canvas>
-                                </p>
-                            </div>
-			       <div class="code-in-visualisation col-md-12">
-                                  <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
-					  <div class="card-body">
-						  <h5 class="card-title">Blablablabla?</h5>
-						  <p class="card-text">
-						     <pre>
-						     <code class="sql sparql-text">
-  QUERY
-	                                             </code>
-						     </pre>
-						  </p>
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation2" onclick="exec('visualisation_2_daily')">
-						  See the results
-					  </button>
-					</div>
-				    </div>
-
-					   <!-- Modal -->
-					   <div class="modal fade" id="modalvisualisation2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-					       <div class="modal-content">
-						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						     <span aria-hidden="true">&times;</span>
-						   </button>
-						 </div>
-						 <div class="modal-body table-json">
-						   <div id="resultvisualisation_2_daily"></div>
-						 </div>
-						 <div class="modal-footer">
-						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-						 </div>
-					       </div>
-					     </div>
-					   </div>
-				</div>
-                            </div>
-                        </div> <!--end tab 2-->
-
-
-                    <div id="tab3" class="tab-pane" role="tabpanel">
-                        <div>
-                            <div class="col-md-12">
-                              <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                              <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                                <p class="mbr-text pt-2 mbr-fonts-style display-7">
-                                    <canvas id="fig3"></canvas></p>
-                            </div>
-			       <div class="code-in-visualisation col-md-12">
-            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
-					  <div class="card-body">
-						  <h5 class="card-title">Blablablabla?</h5>
-						  <p class="card-text">
-						     <pre>
-						     <code class="sql sparql-text">
-  QUERY
-	                                             </code>
-						     </pre>
-						  </p>
-            <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">LINK</a>.</p>
-					  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
-						  See the results
-					  </button>
-					</div>
-				    </div>
-
-					   <!-- Modal -->
-					   <div class="modal fade" id="modalvisualisation3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-					       <div class="modal-content">
-						 <div class="modal-header">
-						   <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-						   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						     <span aria-hidden="true">&times;</span>
-						   </button>
-						 </div>
-						 <div class="modal-body table-json">
-						   <div id="resultvisualisation_3_lang"></div>
-						 </div>
-						 <div class="modal-footer">
-						   <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-						 </div>
-					       </div>
-					     </div>
-					   </div>
-				</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-	</div>
-            </section>
-        </div>
-    </div>
-
-<div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent">  <!-- start of collapsible item 2 #sparql -->
-
-  <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
-
-
-      <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-l-8">
-                <h2><button class="coll-button align-center pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#sparql"><strong>Blablablabla</strong></button></h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Let's ask some more questions.</h3>
-            </div>
-        </div>
-    </div>
   </section>
 
-  <div id="sparql" class="collapse show" data-parent="#menu"> <!--collapse 2 show-->
+  <div class="accordion bg-transparent" id="menu"> <!-- start of accordion -->
+    <div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent"> <!-- div containing the first collapsible -->
 
-<div class="container">
-  <div class="row card-row">
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ1">
-      <div class="card-header">CQ1</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-    <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-    </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary button-card" data-toggle="modal" data-target="#modalCQ1" onclick="exec('CQ1')">
-          See the results
-        </button></div>
-    </div>
-   </div>
+      <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
 
-   <!-- Modal -->
-   <div class="modal fade" id="modalCQ1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <div id="resultCQ1"></div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
-   </div>
 
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ2">
-      <div class="card-header">CQ2
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ2" onclick="exec('CQ2')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalCQ2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="resultCQ2"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row card-row">
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ3">
-      <div class="card-header">CQ3</div>
-      <div class="card-body">
-      <h5 class="card-title">Blablablabla?</h5>
-	<pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-  </div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ3" onclick="exec('CQ3')">
-          See the results
-        </button></div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="modalCQ3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        <div class="container">
+          <div class="media-container-row">
+            <div class="title col-12 col-l-8">
+              <h2><button class="coll-button align-center mb-0 pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#visualisations"><strong>Visualisations</strong></button></h2>
+              <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Sparkling SPARQL results.</h3>
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          <div id="resultCQ3"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
 
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ4">
-      <div class="card-header">CQ4</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ4" onclick="exec('CQ4')">
-          See the results
-        </button></div>
-        </div>
-  </div>
+      <div id="visualisations" class="collapse show" aria-labelledby="headingOne" data-parent="#menu">
+        <section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
+          <div class="container">
+            <div class="row card-row">
+              <div class="col-sm-6 d-flex each-card">
+                <div class="container">
+                  <div id="media-container-row">
+                    <div class="map" id="map"></div>
+                  </div>
+                </div>
+              </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalCQ4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="resultCQ4"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+              <div class="col-sm-6 d-flex each-card">
+                <div class="container">
+                  <p>
+                    <select onchange="updateMap(value)">
+                      <option value="hasTotal">hasTotal</option>
+                      <option value="hasDeathUCDP">hasDeathUCDP</option>
+                      <option value="hasGDPCapConstant">hasGDPCapConstant</option>
+                      <option value="hasGDPCapGrowth">hasGDPCapGrowth</option>
+                      <option value="hasIncomeCapConstant">hasIncomeCapConstant</option>
+                      <option value="hasIncomeCapGrowth">hasIncomeCapGrowth</option>
+                      <option value="hasUnemploymentILO">hasUnemploymentILO</option>
+                      <option value="hasUnemploymentNational">hasUnemploymentNational</option>
+                      <option value="hasDemocracy">hasDemocracy</option>
+                      <option value="hasDeathsTerrorism">hasDeathsTerrorism</option>
+                      <option value="hasWoundedTerrorism">hasWoundedTerrorism</option>
+                    </select>
+                    <!-- <select onchange="updateMap(value)">
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                  </select> -->
+                </p>
+                <div>
+                  <canvas id="map-graph"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<div class="row card-row">
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ5">
-      <div class="card-header">CQ5</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-  </div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ5" onclick="exec('CQ5')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-   <!-- Modal -->
-   <div class="modal fade" id="modalCQ5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <div id="resultCQ5"></div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
-   </div>
-
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ6">
-      <div class="card-header">CQ6</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	<pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-  </div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ6" onclick="exec('CQ6')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalCQ6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="resultCQ6"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row card-row">
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ7">
-      <div class="card-header">CQ7</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	      <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	   </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ7" onclick="exec('CQ7')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-   <!-- Modal -->
-   <div class="modal fade" id="modalCQ7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <div id="resultCQ7"></div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
-   </div>
-
-
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ8">
-      <div class="card-header">CQ8</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	  </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ8" onclick="exec('CQ8')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalCQ8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="resultCQ8"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="row card-row">
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ9">
-     <div class="card-header">CQ9</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	  </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ9" onclick="exec('CQ9')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-   <!-- Modal -->
-   <div class="modal fade" id="modalCQ9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           <div id="resultCQ9"></div>
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-         </div>
-       </div>
-     </div>
-   </div>
-
-   <div class="col-sm-6 d-flex each-card">
-    <div class="card" id="CQ10">
-      <div class="card-header">CQ10</div>
-      <div class="card-body">
-        <h5 class="card-title">Blablablabla?</h5>
-	  <pre>
-	    <code class="sql sparql-text">
-  QUERY
-	    </code>
-	  </pre>
-	</div>
-        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ10" onclick="exec('CQ10')">
-          See the results
-        </button></div>
-    </div>
-   </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="modalCQ10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="resultCQ10"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-  </div> <!-- end of collapse 2 show-->
-
-</div> <!-- end of collapsible item 2 #sparql -->
-</div> <!-- end of the accordion -->
-
-<section once="footers" class="cid-rvh7pWUyp3" id="footer7-l">
+          <div class="container">
+            <p class="mbr-text mbr-fonts-style display-7">Blablablabla</p>
+            <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> repository.</p>
+            <div class="media-container-row">
+              <div class="col-12 col-l-8">
+                <ul class="nav pt-3 nav-tabs" role="tablist">
+                  <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">
+                    Fig. 1</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Fig. 2</a></li>
+                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="true">
+                      Fig. 3</a></li>
 
 
 
+                    </ul>
+                    <div class="tab-content">
+                      <div id="tab1" class="tab-pane in active" role="tabpanel">
+                        <div>
+                          <div class="col-md-12">
+                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
+
+                            </p>
+                          </div>
+                          <div class="code-in-visualisation col-md-12">
+                            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
+                              <div class="card-body">
+                                <h5 class="card-title">Blablablabla?</h5>
+                                <p class="card-text">
+                                  <pre class="pre-wrapper">
+                                    <code class="sql sparql-text">
+                                      QUERY
+                                    </code>
+                                  </pre>
+                                </p>
+                                <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla? <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">LINK</a>.</p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
+                                  See the results
+                                </button>
+                              </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalvisualisation1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body table-json">
+                                    <div id="resultvisualisation_1"></div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!-- end tab 1-->
+
+                      <div id="tab2" class="tab-pane" role="tabpanel">
+                        <div>
+                          <div class="col-md-12">
+                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                              <canvas id="fig2"></canvas>
+                            </p>
+                          </div>
+                          <div class="code-in-visualisation col-md-12">
+                            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+                              <div class="card-body">
+                                <h5 class="card-title">Blablablabla?</h5>
+                                <p class="card-text">
+                                  <pre>
+                                    <code class="sql sparql-text">
+                                      QUERY
+                                    </code>
+                                  </pre>
+                                </p>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation2" onclick="exec('visualisation_2_daily')">
+                                  See the results
+                                </button>
+                              </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalvisualisation2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body table-json">
+                                    <div id="resultvisualisation_2_daily"></div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!--end tab 2-->
 
 
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="row row-links">
-                <ul class="foot-menu">
+                      <div id="tab3" class="tab-pane" role="tabpanel">
+                        <div>
+                          <div class="col-md-12">
+                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                              <canvas id="fig3"></canvas></p>
+                            </div>
+                            <div class="code-in-visualisation col-md-12">
+                              <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+                                <div class="card-body">
+                                  <h5 class="card-title">Blablablabla?</h5>
+                                  <p class="card-text">
+                                    <pre>
+                                      <code class="sql sparql-text">
+                                        QUERY
+                                      </code>
+                                    </pre>
+                                  </p>
+                                  <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">LINK</a>.</p>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
+                                    See the results
+                                  </button>
+                                </div>
+                              </div>
 
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="contact.html" class="text-white"><strong>Contact</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="disclaimer.html" class="text-white"><strong>Disclaimer</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="references.html" class="text-white"><strong>References</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="license.html" class="text-white"><strong>License</strong></a></li></ul>
+                              <!-- Modal -->
+                              <div class="modal fade" id="modalvisualisation3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body table-json">
+                                      <div id="resultvisualisation_3_lang"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
             </div>
 
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">© Copyright 2020 Severin Josef Burg, Eleonora Peruch</p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent">  <!-- start of collapsible item 2 #sparql -->
+
+              <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/dropdown/js/nav-dropdown.js"></script>
-  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/mbr-tabs/mbr-tabs.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/theme/js/script.js"></script>
+                <div class="container">
+                  <div class="media-container-row">
+                    <div class="title col-12 col-l-8">
+                      <h2><button class="coll-button align-center pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#sparql"><strong>Blablablabla</strong></button></h2>
+                      <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Let's ask some more questions.</h3>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-  <script>
-    function fig3Chart() {
-        scatterChartData = {
-            datasets: [{
-                data: JSON.parse(this.responseText),
-                pointBackgroundColor: 'rgba(0,51,153,0.3)',
-                pointBorderColor: 'rgba(0,51,153,0.3)',
-            }]
-        };
-        var ctx = document.getElementById('fig3').getContext('2d');
-        window.fig3 = Chart.Scatter(ctx, {
-        data: scatterChartData,
-        options: {
-          legend: {
-            display: false,
-          },
-          title: {
-            display: false,
-            text: 'Ambiguity of Tweets',
-            fontSize: 20
-          },
-          scales: {
-              xAxes: [{
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Negative Sentiment of Tweet'
-                },
-                ticks: {
-                  reverse: true,
-                  max: 0,
-                  min : -1,
-                  stepSize: 0.1
-                }
-              }],
-              yAxes: [{
-                scaleLabel: {
-                  display: true,
-                  labelString: 'Positive Sentiment of Tweet'
-                },
-                ticks: {
-                  beginAtZero: true,
-                  max : 1,
-                }
-              }]
-          }
-        }
-      });
-    }
+              <div id="sparql" class="collapse show" data-parent="#menu"> <!--collapse 2 show-->
 
-    var oReq = new XMLHttpRequest();
-    oReq.addEventListener("load", fig3Chart);
-    oReq.open("GET", "data/queries/figures/v3Fig.txt");
-    oReq.send();
-  </script>
+                <div class="container">
+                  <div class="row card-row">
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ1">
+                        <div class="card-header">CQ1</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary button-card" data-toggle="modal" data-target="#modalCQ1" onclick="exec('CQ1')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
 
-  <script>
-	var data = {
-      labels: ["bg", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "ga", "hr", "hu", "it", "lt", "lv", "mt", "nl", "pl", "pt", "ro", "sk", "sl", "sv"],
-      datasets: [{
-        label: 'Positive Sentiment',
-        data: [0.1373671568627451, 0.12379477401129943, 0.17993269537480064, 0.1428267864569669, 0.11383492522628887, 0.16100352005871227, 0.28663991049633847, 0, 0.21836363636363637, 0.15011313294031625, 0, 0.093625, 0, 0.18975608741377073, 0, 0.10272619047619047, 0, 0.17999042689539585, 0.16152789855072464, 0.19370742383910086, 0.0845, 0.22526666666666667, 0.19539642857142858, 0.18110519541149794],
-        backgroundColor: 'rgb(255,204,0)',
-      }, {
-        label: 'Negative Sentiment',
-        data: [-0.1443333333333333, -0.16401932367149757, -0.13903781512605043, -0.1793728807107756, -0.1899452838063439, -0.15923580952380953, -0.16564866071428572, 0, -0.2895, -0.14199173913043478, 0, -0.27246666666666663, 0, -0.17941362627607635, 0, -0.0954, 0, -0.15670092592592594, -0.15056, -0.20172695035460994, -0.027, -0.162, -0.09577083333333333, -0.17752686274509805],
-        backgroundColor: 'rgb(0,51,153)',
-      }]
-		};
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ1"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-		var options = {
-					title: {
-						display: false,
-						text: 'Average Pos/Neg Sentiment per Language',
-            fontSize: 20
-					},
-					tooltips: {
-						mode: 'index',
-						intersect: false
-					},
-					responsive: true,
-					scales: {
-						xAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: 'Language'
-              },
-							stacked: true,
-						}],
-						yAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: 'Average Pos/Neg Sentiment'
-              },
-							stacked: true
-						}]
-					}
-				};
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ2">
+                        <div class="card-header">CQ2
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ2" onclick="exec('CQ2')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
 
-    var ctx = document.getElementById('fig1').getContext('2d');
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ2"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
-		var fig1Chart = new Chart(ctx, {
-			type: 'bar',
-			data: data,
-			options: options
-		});
-  </script>
+                  <div class="row card-row">
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ3">
+                        <div class="card-header">CQ3</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ3" onclick="exec('CQ3')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
 
-    <script>
-        var config = {
-            type: 'lineChartData',
-            data: {
-                labels: ['27-05', '28-05', '29-05', '30-05', '31-05', '01-06', '02-06'],
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ3"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ4">
+                        <div class="card-header">CQ4</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ4" onclick="exec('CQ4')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ4"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row card-row">
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ5">
+                        <div class="card-header">CQ5</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ5" onclick="exec('CQ5')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ5"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ6">
+                        <div class="card-header">CQ6</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ6" onclick="exec('CQ6')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ6"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row card-row">
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ7">
+                        <div class="card-header">CQ7</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ7" onclick="exec('CQ7')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ7"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ8">
+                        <div class="card-header">CQ8</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ8" onclick="exec('CQ8')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ8"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row card-row">
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ9">
+                        <div class="card-header">CQ9</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ9" onclick="exec('CQ9')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ9"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 d-flex each-card">
+                      <div class="card" id="CQ10">
+                        <div class="card-header">CQ10</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Blablablabla?</h5>
+                          <pre>
+                            <code class="sql sparql-text">
+                              QUERY
+                            </code>
+                          </pre>
+                        </div>
+                        <div class="card-footer"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCQ10" onclick="exec('CQ10')">
+                          See the results
+                        </button></div>
+                      </div>
+                    </div>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCQ10" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div id="resultCQ10"></div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> <!-- end of collapse 2 show-->
+
+              </div> <!-- end of collapsible item 2 #sparql -->
+            </div> <!-- end of the accordion -->
+
+            <section once="footers" class="cid-rvh7pWUyp3" id="footer7-l">
+
+
+
+
+
+              <div class="container">
+                <div class="media-container-row align-center mbr-white">
+                  <div class="row row-links">
+                    <ul class="foot-menu">
+
+                      <li class="foot-menu-item mbr-fonts-style display-7"><a href="contact.html" class="text-white"><strong>Contact</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="disclaimer.html" class="text-white"><strong>Disclaimer</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="references.html" class="text-white"><strong>References</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="license.html" class="text-white"><strong>License</strong></a></li></ul>
+                    </div>
+
+                    <div class="row row-copirayt">
+                      <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">© Copyright 2020 Severin Josef Burg, Eleonora Peruch</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+
+              <script src="assets/web/assets/jquery/jquery.min.js"></script>
+              <script src="assets/popper/popper.min.js"></script>
+              <script src="assets/tether/tether.min.js"></script>
+              <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+              <script src="assets/dropdown/js/nav-dropdown.js"></script>
+              <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+              <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+              <script src="assets/mbr-tabs/mbr-tabs.js"></script>
+              <script src="assets/smoothscroll/smooth-scroll.js"></script>
+              <script src="assets/theme/js/script.js"></script>
+
+              <script type="text/javascript" src="data/map-data.js"></script>
+              <script type="text/javascript" src="scripts/map.js"></script>
+
+              <script>
+              function fig3Chart() {
+                scatterChartData = {
+                  datasets: [{
+                    data: JSON.parse(this.responseText),
+                    pointBackgroundColor: 'rgba(0,51,153,0.3)',
+                    pointBorderColor: 'rgba(0,51,153,0.3)',
+                  }]
+                };
+                var ctx = document.getElementById('fig3').getContext('2d');
+                window.fig3 = Chart.Scatter(ctx, {
+                  data: scatterChartData,
+                  options: {
+                    legend: {
+                      display: false,
+                    },
+                    title: {
+                      display: false,
+                      text: 'Ambiguity of Tweets',
+                      fontSize: 20
+                    },
+                    scales: {
+                      xAxes: [{
+                        scaleLabel: {
+                          display: true,
+                          labelString: 'Negative Sentiment of Tweet'
+                        },
+                        ticks: {
+                          reverse: true,
+                          max: 0,
+                          min : -1,
+                          stepSize: 0.1
+                        }
+                      }],
+                      yAxes: [{
+                        scaleLabel: {
+                          display: true,
+                          labelString: 'Positive Sentiment of Tweet'
+                        },
+                        ticks: {
+                          beginAtZero: true,
+                          max : 1,
+                        }
+                      }]
+                    }
+                  }
+                });
+              }
+
+              var oReq = new XMLHttpRequest();
+              oReq.addEventListener("load", fig3Chart);
+              oReq.open("GET", "data/queries/figures/v3Fig.txt");
+              oReq.send();
+              </script>
+
+              <script>
+              var data = {
+                labels: ["bg", "cs", "da", "de", "el", "en", "es", "et", "fi", "fr", "ga", "hr", "hu", "it", "lt", "lv", "mt", "nl", "pl", "pt", "ro", "sk", "sl", "sv"],
                 datasets: [{
+                  label: 'Positive Sentiment',
+                  data: [0.1373671568627451, 0.12379477401129943, 0.17993269537480064, 0.1428267864569669, 0.11383492522628887, 0.16100352005871227, 0.28663991049633847, 0, 0.21836363636363637, 0.15011313294031625, 0, 0.093625, 0, 0.18975608741377073, 0, 0.10272619047619047, 0, 0.17999042689539585, 0.16152789855072464, 0.19370742383910086, 0.0845, 0.22526666666666667, 0.19539642857142858, 0.18110519541149794],
+                  backgroundColor: 'rgb(255,204,0)',
+                }, {
+                  label: 'Negative Sentiment',
+                  data: [-0.1443333333333333, -0.16401932367149757, -0.13903781512605043, -0.1793728807107756, -0.1899452838063439, -0.15923580952380953, -0.16564866071428572, 0, -0.2895, -0.14199173913043478, 0, -0.27246666666666663, 0, -0.17941362627607635, 0, -0.0954, 0, -0.15670092592592594, -0.15056, -0.20172695035460994, -0.027, -0.162, -0.09577083333333333, -0.17752686274509805],
+                  backgroundColor: 'rgb(0,51,153)',
+                }]
+              };
+
+              var options = {
+                title: {
+                  display: false,
+                  text: 'Average Pos/Neg Sentiment per Language',
+                  fontSize: 20
+                },
+                tooltips: {
+                  mode: 'index',
+                  intersect: false
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Language'
+                    },
+                    stacked: true,
+                  }],
+                  yAxes: [{
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Average Pos/Neg Sentiment'
+                    },
+                    stacked: true
+                  }]
+                }
+              };
+
+              var ctx = document.getElementById('fig1').getContext('2d');
+
+              var fig1Chart = new Chart(ctx, {
+                type: 'bar',
+                data: data,
+                options: options
+              });
+              </script>
+
+              <script>
+              var config = {
+                type: 'lineChartData',
+                data: {
+                  labels: ['27-05', '28-05', '29-05', '30-05', '31-05', '01-06', '02-06'],
+                  datasets: [{
                     label: 'Total Tweets',
                     data: [8904,4699,2553,1856,1320,906,1177],
                     backgroundColor: 'rgb(0,51,153)',
                     borderColor: 'rgb(0,51,153)',
                     fill: false,
                     yAxisID: 'y-axis-1',
-                }, {
+                  }, {
                     label: 'Average Sentiment',
                     fill: false,
                     data: [0.094176,0.089817,0.092057,0.086352,0.072255,0.073585,0.058714],
                     backgroundColor: 'rgb(255,204,0)',
                     borderColor: 'rgb(255,204,0)',
                     yAxisID: 'y-axis-2'
-                }]
-            },
-            options: {
-                responsive: true,
-                title: {
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  title: {
                     display: false,
                     text: 'Development of Sentiment and Involvement',
                     fontSize: 20
-                },
-                tooltips: {
+                  },
+                  tooltips: {
                     mode: 'index',
                     intersect: false,
-                },
-                hover: {
+                  },
+                  hover: {
                     mode: 'nearest',
                     intersect: true
-                },
-                scales: {
+                  },
+                  scales: {
                     xAxes: [{
+                      display: true,
+                      scaleLabel: {
                         display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Dates'
-                        }
+                        labelString: 'Dates'
+                      }
                     }],
                     yAxes: [{
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            id: 'y-axis-1',
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Total Tweets'
-                            }
-                        }, {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            id: 'y-axis-2',
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Average Sentiment'
-                            }
-                        }]
-                    }
+                      type: 'linear',
+                      display: true,
+                      position: 'left',
+                      id: 'y-axis-1',
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Total Tweets'
+                      }
+                    }, {
+                      type: 'linear',
+                      display: true,
+                      position: 'right',
+                      id: 'y-axis-2',
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Average Sentiment'
+                      }
+                    }]
+                  }
                 }
-            };
+              };
 
-        window.onload = function() {
-            var ctx = document.getElementById('fig2').getContext('2d');
-            window.myLine = new Chart.Line(ctx, config);
-        };
-    </script>
+              window.onload = function() {
+                var ctx = document.getElementById('fig2').getContext('2d');
+                window.myLine = new Chart.Line(ctx, config);
+              };
+              </script>
 
-</body>
-</html>
+              <script>
+              window.onload = updateMap('hasTotal')
+              </script>
+
+            </body>
+            </html>
