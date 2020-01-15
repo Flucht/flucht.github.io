@@ -1,5 +1,3 @@
-var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'description':"<a href='www.google.de' target='_blank'>Google</a>", 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'description':'', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'description':'', 'type': '$/Capita'},  'hasGDPCapGrowth':{'title':'Growth of GDP per Capita', 'description':'', 'type': '%/Capita'}, 'hasIncomeCapConstant':{'title':'Constant Income per Capita', 'description':'', 'type': '$/Capita'},  'hasIncomeCapGrowth':{'title':'Growth of Income per Capita', 'description':'', 'type': '%/Capita'}, 'hasUnemploymentILO':{'title':'Unemployment Rate [ILO]', 'description':'', 'type': '%'}, 'hasUnemploymentNational':{'title':'Unemployment Rate [national]', 'description':'', 'type': '%'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'description':'', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Deaths through Terrorism', 'description':'', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Wounded through Terrorism', 'description':'', 'type': 'People'}}
-
 var years = ["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"]
 var chart
 
@@ -42,7 +40,10 @@ function updateMap(predicate) {
     this._div.innerHTML = '<h4>' + info_labels[predicate].title + '</h4>' +  (props ?
       '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]["total"]) + ' ' + info_labels[predicate].type
       : 'Hover over a state');
-    document.getElementById("data-description").innerHTML = '<p>' + info_labels[predicate].description + '</p>'
+
+    if (document.getElementById("data-description") != null) {
+      document.getElementById("data-description").innerHTML = '<b>Description:</b>' + '<br /><p>' + info_labels[predicate].description + '</p>' + '<b>Data provider:</b>' + '<br /><p>' + info_labels[predicate].provider + '</p>';
+    }
   };
 
   info.addTo(map);

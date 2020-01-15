@@ -129,27 +129,27 @@
             <div class="col-sm-6 d-flex each-card">
               <div class="container">
                 <h3>Map Visualisation</h3>
-                <p><i><b>Tip:</b> Hover over the map to display annual data for the respective country in the graph.</i></p>
                 <p>
-                  <label for="data">Select map data:</label>
+                  <label for="data"><b>Select data:</b></label>
                   <select name="data" onchange="updateMap(value)">
                     <option value="hasTotal">Total Displaced Population</option>
-                    <option value="hasDeathUCDP">Total Deaths [UCDP]</option>
+                    <option value="hasDemocracy">EIU Democracy Index</option>
                     <option value="hasGDPCapConstant">Constant GDP per Capita</option>
                     <option value="hasGDPCapGrowth">Growth of GDP per Capita</option>
                     <option value="hasIncomeCapConstant">Constant Income per Capita</option>
                     <option value="hasIncomeCapGrowth">Growth of Income per Capita</option>
                     <option value="hasUnemploymentILO">Unemployment Rate [ILO]</option>
                     <option value="hasUnemploymentNational">Unemployment Rate [national]</option>
-                    <option value="hasDemocracy">EIU Democracy Index</option>
+                    <option value="hasDeathUCDP">Total Deaths [UCDP]</option>
                     <option value="hasDeathsTerrorism">Deaths through Terrorism</option>
                     <option value="hasWoundedTerrorism">Wounded through Terrorism</option>
                   </select>
                 </p>
-                <div id="data-description">
-                </div>
+                <p><i><b>Tip:</b> Hover over the map to display annual data for the respective country in the graph.</i></p>
                 <div>
                   <canvas id="map-graph"></canvas>
+                </div>
+                <div id="data-description">
                 </div>
               </div>
             </div>
@@ -576,6 +576,7 @@
   <script src="assets/theme/js/script.js"></script>
 
   <script type="text/javascript" src="data/map-data.js"></script>
+  <script type="text/javascript" src="data/labels.js"></script>
   <script type="text/javascript" src="scripts/map.js"></script>
 
   <script>

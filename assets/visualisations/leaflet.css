@@ -39,6 +39,6 @@
   max-width: 95%;
 }
 
-.chartjs-render-monitor {
-
+#data-description {
+  margin-top: 1rem;
 }
