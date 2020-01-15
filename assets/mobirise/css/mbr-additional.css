@@ -4104,7 +4104,7 @@ body {
 }
 .cid-rvrS31EJIP {
   padding-top: 120px;
-  padding-bottom: 30px;
+  padding-bottom: 0;
   background-color: #EDE9E8;
 }
 .cid-rvrS31EJIP .mbr-section-subtitle {
@@ -4114,16 +4114,21 @@ body {
   color: #160F0B;
 }
 .cid-rvsO0Sfnun {
-  padding-top: 30px;
+  padding-top: 0;
   padding-bottom: 60px;
   background-color: #EDE9E8;
 }
 .cid-rvsO0Sfnun .nav-tabs {
+  margin: 0 !important;
   -webkit-justify-content: center;
   justify-content: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   border-bottom: none;
+}
+.cid-rvsO0Sfnun .pt-3 {
+  padding-top: 0 !important;
+  padding-bottom: 30px;
 }
 .cid-rvsO0Sfnun .nav-tabs .nav-link {
   box-sizing: border-box;
