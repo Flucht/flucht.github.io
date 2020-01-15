@@ -1,4 +1,4 @@
-var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'type': '$/Capita'},  'hasGDPCapGrowth':{'title':'Growth of GDP per Capita', 'type': '%/Capita'}, 'hasIncomeCapConstant':{'title':'Constant Income per Capita', 'type': '$/Capita'},  'hasIncomeCapGrowth':{'title':'Growth of Income per Capita', 'type': '%/Capita'}, 'hasUnemploymentILO':{'title':'Unemployment Rate [ILO]', 'type': '%'}, 'hasUnemploymentNational':{'title':'Unemployment Rate [national]', 'type': '%'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Deaths through Terrorism', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Wounded through Terrorism', 'type': 'People'}}
+var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'description':"<a href='www.google.de' target='_blank'>Google</a>", 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'description':'', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'description':'', 'type': '$/Capita'},  'hasGDPCapGrowth':{'title':'Growth of GDP per Capita', 'description':'', 'type': '%/Capita'}, 'hasIncomeCapConstant':{'title':'Constant Income per Capita', 'description':'', 'type': '$/Capita'},  'hasIncomeCapGrowth':{'title':'Growth of Income per Capita', 'description':'', 'type': '%/Capita'}, 'hasUnemploymentILO':{'title':'Unemployment Rate [ILO]', 'description':'', 'type': '%'}, 'hasUnemploymentNational':{'title':'Unemployment Rate [national]', 'description':'', 'type': '%'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'description':'', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Deaths through Terrorism', 'description':'', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Wounded through Terrorism', 'description':'', 'type': 'People'}}
 
 var years = ["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"]
 var chart
@@ -42,6 +42,7 @@ function updateMap(predicate) {
     this._div.innerHTML = '<h4>' + info_labels[predicate].title + '</h4>' +  (props ?
       '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]["total"]) + ' ' + info_labels[predicate].type
       : 'Hover over a state');
+    document.getElementById("data-description").innerHTML = '<p>' + info_labels[predicate].description + '</p>'
   };
 
   info.addTo(map);
