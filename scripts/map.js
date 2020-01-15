@@ -52,7 +52,6 @@ function updateMap(predicate) {
     for (var i=0 ; i<arr.length ; i++) {
       if (max == null || parseFloat(arr[i]['properties'][prop]["total"]) > parseFloat(max)){
         max = arr[i]['properties'][prop]["total"];
-        console.log(max)
       }
     }
     if (String(parseInt(max)).length > 2) {
@@ -114,19 +113,20 @@ function updateMap(predicate) {
   function updateChart(props) {
     destroyChart();
 
-    chart = new Chart(document.getElementById("map-graph"),{
-      "type":"bar",
-      "data":{
-        "labels":years,
-        "datasets":[{
-          "label":info_labels[predicate].title,
-          "data": chartData(props),
-          "fill":false,
-          "backgroundColor":"rgba(247, 94, 25, 0.2)",
-          "borderColor":"rgb(247, 94, 25)",
-          "borderWidth":1
-        }]
-      },"options":{
+    if (document.getElementById("map-graph") != null) {
+      chart = new Chart(document.getElementById("map-graph"),{
+        "type":"bar",
+        "data":{
+          "labels":years,
+          "datasets":[{
+            "label":info_labels[predicate].title,
+            "data": chartData(props),
+            "fill":false,
+            "backgroundColor":"rgba(247, 94, 25, 0.2)",
+            "borderColor":"rgb(247, 94, 25)",
+            "borderWidth":1
+          }]
+        },"options":{
           "scales":{
             "yAxes":[{
               "ticks":{
@@ -136,6 +136,7 @@ function updateMap(predicate) {
           }
         }
       });
+    }
   }
 
   updateChart("emptyChart");
