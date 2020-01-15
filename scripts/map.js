@@ -1,6 +1,7 @@
-var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'type': '$'},  'hasGDPCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasIncomeCapConstant':{'title':'Total Displaced Population', 'type': 'People'},  'hasIncomeCapGrowth':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentILO':{'title':'Total Displaced Population', 'type': 'People'}, 'hasUnemploymentNational':{'title':'Total Displaced Population', 'type': 'People'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Total Displaced Population', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Total Displaced Population', 'type': 'People'}}
+var info_labels = {'hasTotal': {'title':'Total Displaced Population', 'type': 'People'}, 'hasDeathUCDP': {'title':'Total Deaths [UCDP]', 'type': 'People'}, 'hasGDPCapConstant':{'title':'Constant GDP per Capita', 'type': '$/Capita'},  'hasGDPCapGrowth':{'title':'Growth of GDP per Capita', 'type': '%/Capita'}, 'hasIncomeCapConstant':{'title':'Constant Income per Capita', 'type': '$/Capita'},  'hasIncomeCapGrowth':{'title':'Growth of Income per Capita', 'type': '%/Capita'}, 'hasUnemploymentILO':{'title':'Unemployment Rate [ILO]', 'type': '%'}, 'hasUnemploymentNational':{'title':'Unemployment Rate [national]', 'type': '%'}, 'hasDemocracy':{'title':'EIU Democracy Index', 'type': '%'}, 'hasDeathsTerrorism':{'title':'Deaths through Terrorism', 'type': 'People'}, 'hasWoundedTerrorism':{'title':'Wounded through Terrorism', 'type': 'People'}}
 
 var years = ["2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019"]
+var chart
 
 function updateMap(predicate) {
   document.getElementById('media-container-row').innerHTML = "<div class='map' id='map'></div>";
@@ -63,7 +64,7 @@ function updateMap(predicate) {
     } else {
       step = [Math.round(max*1), Math.round(max*0.85), Math.round(max*0.7), Math.round(max*0.55), Math.round(max*0.4), Math.round(max*0.25), step_0 = Math.round(max*0.1)]
     }
-    console.log(max)
+
     return max;
   }
 
@@ -71,14 +72,14 @@ function updateMap(predicate) {
     if(max == null){
       getMax(nationsData['features'], predicate)
     }
-    return d > step[0] ? '#800026' :
-        d > step[1] ? '#BD0026' :
-        d > step[2] ? '#E31A1C' :
-        d > step[3] ? '#FC4E2A' :
-        d > step[4] ? '#FD8D3C' :
-        d > step[5] ? '#FEB24C' :
-        d > step[6] ? '#FED976' :
-              '#FFEDA0';
+    return d > step[0] ? '#990000' :
+        d > step[1] ? '#DD310B' :
+        d > step[2] ? '#ED5E19' :
+        d > step[3] ? '#FF7D14' :
+        d > step[4] ? '#FF9035' :
+        d > step[5] ? '#FFA851' :
+        d > step[6] ? '#FFC37F' :
+              '#FFE1BF';
   }
 
   function style(feature) {
@@ -92,18 +93,28 @@ function updateMap(predicate) {
     };
   }
 
-  function chartData(props, labels) {
+  function chartData(props) {
     data = []
 
-    years.forEach(
-      year => data.push(props[predicate][year])
-    )
+    if (props != "emptyChart"){
+      years.forEach(
+        year => data.push(props[predicate][year])
+      )
+    }
 
     return data
   }
 
+  function destroyChart() {
+    if (chart != null){
+      chart.destroy();
+    }
+  }
+
   function updateChart(props) {
-    new Chart(document.getElementById("map-graph"),{
+    destroyChart();
+
+    chart = new Chart(document.getElementById("map-graph"),{
       "type":"bar",
       "data":{
         "labels":years,
@@ -111,10 +122,11 @@ function updateMap(predicate) {
           "label":info_labels[predicate].title,
           "data": chartData(props),
           "fill":false,
-          "backgroundColor":"rgba(255, 99, 132, 0.2)",
-          "borderColor":"rgb(255, 99, 132)",
-          "borderWidth":1}]},
-        "options":{
+          "backgroundColor":"rgba(247, 94, 25, 0.2)",
+          "borderColor":"rgb(247, 94, 25)",
+          "borderWidth":1
+        }]
+      },"options":{
           "scales":{
             "yAxes":[{
               "ticks":{
@@ -125,6 +137,8 @@ function updateMap(predicate) {
         }
       });
   }
+
+  updateChart("emptyChart");
 
   function highlightFeature(e) {
     var layer = e.target;

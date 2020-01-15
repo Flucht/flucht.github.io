@@ -63,9 +63,6 @@
 </head>
 <body>
   <section class="menu cid-rvgZMVDNg8" once="menu" id="menu1-k">
-
-
-
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <div class="hamburger">
@@ -96,231 +93,213 @@
     </nav>
   </section>
 
-  <div class="accordion bg-transparent" id="menu"> <!-- start of accordion -->
-    <div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent"> <!-- div containing the first collapsible -->
-
-      <section class="engine"><a href="https://mobirise.info/z">best css templates</a></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
+  <section class="engine"></section><section class="mbr-section content4 cid-rvrS31EJIP" id="content4-18">
 
 
-        <div class="container">
-          <div class="media-container-row">
-            <div class="title col-12 col-l-8">
-              <h2><button class="coll-button align-center mb-0 pb-3 mbr-fonts-style display-2 bg-transparent" type="button" data-toggle="collapse" data-target="#visualisations"><strong>Visualisations</strong></button></h2>
-              <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Sparkling SPARQL results.</h3>
+    <div class="container">
+      <div class="media-container-row">
+        <div class="title col-12 col-l-8">
+          <h2 class="align-center mb-0 pb-3 mbr-fonts-style display-2 bg-transparent"><strong>Visualisations</strong></h2>
+          <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Sparkling SPARQL results.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
+    <div class="container">
+      <div class="row card-row">
+        <div class="col-sm-6 d-flex each-card">
+          <div class="container">
+            <div id="media-container-row">
+              <div class="map" id="map"></div>
             </div>
           </div>
         </div>
-      </section>
 
-
-      <div id="visualisations" class="collapse show" aria-labelledby="headingOne" data-parent="#menu">
-        <section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
+        <div class="col-sm-6 d-flex each-card">
           <div class="container">
-            <div class="row card-row">
-              <div class="col-sm-6 d-flex each-card">
-                <div class="container">
-                  <div id="media-container-row">
-                    <div class="map" id="map"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-sm-6 d-flex each-card">
-                <div class="container">
-                  <p>
-                    <select onchange="updateMap(value)">
-                      <option value="hasTotal">hasTotal</option>
-                      <option value="hasDeathUCDP">hasDeathUCDP</option>
-                      <option value="hasGDPCapConstant">hasGDPCapConstant</option>
-                      <option value="hasGDPCapGrowth">hasGDPCapGrowth</option>
-                      <option value="hasIncomeCapConstant">hasIncomeCapConstant</option>
-                      <option value="hasIncomeCapGrowth">hasIncomeCapGrowth</option>
-                      <option value="hasUnemploymentILO">hasUnemploymentILO</option>
-                      <option value="hasUnemploymentNational">hasUnemploymentNational</option>
-                      <option value="hasDemocracy">hasDemocracy</option>
-                      <option value="hasDeathsTerrorism">hasDeathsTerrorism</option>
-                      <option value="hasWoundedTerrorism">hasWoundedTerrorism</option>
-                    </select>
-                    <!-- <select onchange="updateMap(value)">
-                    <option value="2009">2009</option>
-                    <option value="2010">2010</option>
-                    <option value="2011">2011</option>
-                    <option value="2012">2012</option>
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                  </select> -->
-                </p>
-                <div>
-                  <canvas id="map-graph"></canvas>
-                </div>
-              </div>
+            <p>
+              <label for="data">Select map data:</label>
+              <select name="data" onchange="updateMap(value)">
+                <option value="hasTotal">Total Displaced Population</option>
+                <option value="hasDeathUCDP">Total Deaths [UCDP]</option>
+                <option value="hasGDPCapConstant">Constant GDP per Capita</option>
+                <option value="hasGDPCapGrowth">Growth of GDP per Capita</option>
+                <option value="hasIncomeCapConstant">Constant Income per Capita</option>
+                <option value="hasIncomeCapGrowth">Growth of Income per Capita</option>
+                <option value="hasUnemploymentILO">Unemployment Rate [ILO]</option>
+                <option value="hasUnemploymentNational">Unemployment Rate [national]</option>
+                <option value="hasDemocracy">EIU Democracy Index</option>
+                <option value="hasDeathsTerrorism">Deaths through Terrorism</option>
+                <option value="hasWoundedTerrorism">Wounded through Terrorism</option>
+              </select>
+            </p>
+            <div>
+              <canvas id="map-graph"></canvas>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="container">
-            <p class="mbr-text mbr-fonts-style display-7">Blablablabla</p>
-            <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> repository.</p>
-            <div class="media-container-row">
-              <div class="col-12 col-l-8">
-                <ul class="nav pt-3 nav-tabs" role="tablist">
-                  <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">
-                    Fig. 1</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Fig. 2</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="true">
-                      Fig. 3</a></li>
+      <div class="container">
+        <p class="mbr-text mbr-fonts-style display-7">Blablablabla</p>
+        <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> repository.</p>
+        <div class="media-container-row">
+          <div class="col-12 col-l-8">
+            <ul class="nav pt-3 nav-tabs" role="tablist">
+              <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">
+                Fig. 1</a></li>
+                <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Fig. 2</a></li>
+                <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="true">
+                  Fig. 3</a></li>
 
 
 
-                    </ul>
-                    <div class="tab-content">
-                      <div id="tab1" class="tab-pane in active" role="tabpanel">
-                        <div>
-                          <div class="col-md-12">
-                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                </ul>
+                <div class="tab-content">
+                  <div id="tab1" class="tab-pane in active" role="tabpanel">
+                    <div>
+                      <div class="col-md-12">
+                        <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                        <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                        <p class="mbr-text pt-2 mbr-fonts-style display-7">
 
+                        </p>
+                      </div>
+                      <div class="code-in-visualisation col-md-12">
+                        <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
+                          <div class="card-body">
+                            <h5 class="card-title">Blablablabla?</h5>
+                            <p class="card-text">
+                              <pre class="pre-wrapper">
+                                <code class="sql sparql-text">
+                                  QUERY
+                                </code>
+                              </pre>
                             </p>
+                            <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla? <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">LINK</a>.</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
+                              See the results
+                            </button>
                           </div>
-                          <div class="code-in-visualisation col-md-12">
-                            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu"> <!-- div containing the first and only collapsible -->
-                              <div class="card-body">
-                                <h5 class="card-title">Blablablabla?</h5>
-                                <p class="card-text">
-                                  <pre class="pre-wrapper">
-                                    <code class="sql sparql-text">
-                                      QUERY
-                                    </code>
-                                  </pre>
-                                </p>
-                                <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla? <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3Lang.py" class="text-info" target="_blank">LINK</a>.</p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation1" onclick="exec('visualisation_1')">
-                                  See the results
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalvisualisation1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                            </div>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="modalvisualisation1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                              <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body table-json">
-                                    <div id="resultvisualisation_1"></div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                  </div>
-                                </div>
+                              <div class="modal-body table-json">
+                                <div id="resultvisualisation_1"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div> <!-- end tab 1-->
+                      </div>
+                    </div>
+                  </div> <!-- end tab 1-->
 
-                      <div id="tab2" class="tab-pane" role="tabpanel">
-                        <div>
-                          <div class="col-md-12">
-                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
-                              <canvas id="fig2"></canvas>
+                  <div id="tab2" class="tab-pane" role="tabpanel">
+                    <div>
+                      <div class="col-md-12">
+                        <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                        <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                        <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                          <canvas id="fig2"></canvas>
+                        </p>
+                      </div>
+                      <div class="code-in-visualisation col-md-12">
+                        <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+                          <div class="card-body">
+                            <h5 class="card-title">Blablablabla?</h5>
+                            <p class="card-text">
+                              <pre>
+                                <code class="sql sparql-text">
+                                  QUERY
+                                </code>
+                              </pre>
                             </p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation2" onclick="exec('visualisation_2_daily')">
+                              See the results
+                            </button>
                           </div>
-                          <div class="code-in-visualisation col-md-12">
-                            <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
-                              <div class="card-body">
-                                <h5 class="card-title">Blablablabla?</h5>
-                                <p class="card-text">
-                                  <pre>
-                                    <code class="sql sparql-text">
-                                      QUERY
-                                    </code>
-                                  </pre>
-                                </p>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation2" onclick="exec('visualisation_2_daily')">
-                                  See the results
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalvisualisation2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
                                 </button>
                               </div>
-                            </div>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="modalvisualisation2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                              <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  <div class="modal-body table-json">
-                                    <div id="resultvisualisation_2_daily"></div>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                  </div>
-                                </div>
+                              <div class="modal-body table-json">
+                                <div id="resultvisualisation_2_daily"></div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div> <!--end tab 2-->
+                      </div>
+                    </div>
+                  </div> <!--end tab 2-->
 
 
-                      <div id="tab3" class="tab-pane" role="tabpanel">
-                        <div>
-                          <div class="col-md-12">
-                            <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
-                            <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
-                            <p class="mbr-text pt-2 mbr-fonts-style display-7">
-                              <canvas id="fig3"></canvas></p>
+                  <div id="tab3" class="tab-pane" role="tabpanel">
+                    <div>
+                      <div class="col-md-12">
+                        <h3 class="mbr-section-subtitle align-center py-3 mbr-light mbr-fonts-style display-5">Blablablabla</h3>
+                        <p class="mbr-text pb-3 mbr-fonts-style display-7">Blablablabla</p>
+                        <p class="mbr-text pt-2 mbr-fonts-style display-7">
+                          <canvas id="fig3"></canvas></p>
+                        </div>
+                        <div class="code-in-visualisation col-md-12">
+                          <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
+                            <div class="card-body">
+                              <h5 class="card-title">Blablablabla?</h5>
+                              <p class="card-text">
+                                <pre>
+                                  <code class="sql sparql-text">
+                                    QUERY
+                                  </code>
+                                </pre>
+                              </p>
+                              <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">LINK</a>.</p>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
+                                See the results
+                              </button>
                             </div>
-                            <div class="code-in-visualisation col-md-12">
-                              <div class="card align-center collapse show mbr-fonts-style display-2" aria-labelledby="headingOne" data-parent="#graph-menu">
-                                <div class="card-body">
-                                  <h5 class="card-title">Blablablabla?</h5>
-                                  <p class="card-text">
-                                    <pre>
-                                      <code class="sql sparql-text">
-                                        QUERY
-                                      </code>
-                                    </pre>
-                                  </p>
-                                  <p class="align-center pb-1 mbr-fonts-style display-7">Blablablabla <a href="https://github.com/europinion/europinion.github.io/blob/master/scripts/visualisation/visualisation3.py" class="text-info" target="_blank">LINK</a>.</p>
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalvisualisation3" onclick="exec('visualisation_3_lang')">
-                                    See the results
+                          </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="modalvisualisation3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
                                   </button>
                                 </div>
-                              </div>
-
-                              <!-- Modal -->
-                              <div class="modal fade" id="modalvisualisation3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <h6 class="modal-title" id="exampleModalLongTitle">Blablablabla?</h6>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
-                                    <div class="modal-body table-json">
-                                      <div id="resultvisualisation_3_lang"></div>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
+                                <div class="modal-body table-json">
+                                  <div id="resultvisualisation_3_lang"></div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                                 </div>
                               </div>
                             </div>
@@ -329,9 +308,9 @@
                       </div>
                     </div>
                   </div>
-                </section>
+                </div>
               </div>
-            </div>
+            </section>
 
             <div class="card align-center pb-1 mbr-fonts-style display-2 bg-transparent">  <!-- start of collapsible item 2 #sparql -->
 
