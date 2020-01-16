@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-var width = 800
-var height = 600
+var width = 700
+var height = 500
 
 // append the svg object to the body of the page
 var svg = d3.select("#bubble")
