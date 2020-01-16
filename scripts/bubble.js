@@ -1,3 +1,5 @@
+var chart = document.getElementById('media-container-row').innerHTML = "<div class='bubble' id='bubble'></div>";
+
 // set the dimensions and margins of the graph
 var width = 460
 var height = 460
