@@ -1,6 +1,15 @@
 Chart.defaults.global.pointHitDetectionRadius = 1;
+var dynamic_chart;
+
+function destroyChart() {
+  if (dynamic_chart != null){
+    dynamic_chart.destroy();
+  }
+}
 
 function updateChart(input_nation, predicate_1, predicate_2) {
+  destroyChart();
+
   var customTooltips = function(tooltip) {
     // Tooltip Element
     var tooltipEl = document.getElementById('chartjs-tooltip');
@@ -102,8 +111,7 @@ function updateChart(input_nation, predicate_1, predicate_2) {
     }]
   };
 
-  var chartEl = document.getElementById('chart');
-  window.myLine = new Chart(chartEl, {
+  dynamic_chart = new Chart(document.getElementById('chart'), {
     type: 'line',
     data: lineChartData,
     options: {
