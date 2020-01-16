@@ -85,7 +85,7 @@
         <div class="media-container-row">
           <div class="col-12 col-l-8">
             <ul class="nav pt-3 nav-tabs" role="tablist">
-              <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true" onclick="map.invalidateSize()">Maps</a></li>
+              <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true" onclick="window.dispatchEvent(new Event('resize'))">Maps</a></li>
               <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="true">Graphs</a></li>
             </ul>
           </div>
@@ -143,6 +143,11 @@
               <canvas id="chart"></canvas>
             </div>
             <div class="col-3">
+              <div id="radio_buttons">
+                <label for="graph_type"><b>Graph type:</b></label><br/>
+                <p><input type="radio" name="graph_type" value="bar" class="graph_data">Bar</input><p>
+                <p><input type="radio" name="graph_type" value="line" class="graph_data" checked>Line</input><p>
+              </div>
               <p>
                 <label for="nation"><b>Nation:</b></label><br/>
                 <select class="graph_data" id="nation" name="nation">
@@ -603,7 +608,7 @@
 
   <script>
     window.onload = updateMap('hasTotal')
-    window.onload = updateChart('Germany', 'hasTotal', 'hasDemocracy')
+    window.onload = updateChart('line', 'Afghanistan', 'hasTotal', 'hasDemocracy')
   </script>
 
   <script>
@@ -634,10 +639,19 @@
 
     selectElement.forEach((item) => {
       item.addEventListener('change', (event) => {
+        var radios = document.getElementsByName('graph_type');
+
+        for (var i = 0, length = radios.length; i < length; i++) {
+          if (radios[i].checked) {
+            graph = radios[i].value;
+            break;
+          }
+        }
+
         var nation = document.getElementById('nation').value
         var predicate_1 = document.getElementById('predicate_1').value
         var predicate_2 = document.getElementById('predicate_2').value
-        updateChart(nation, predicate_1, predicate_2)
+        updateChart(graph, nation, predicate_1, predicate_2)
       });
     });
   </script>

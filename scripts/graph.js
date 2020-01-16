@@ -7,7 +7,7 @@ function destroyChart() {
   }
 }
 
-function updateChart(input_nation, predicate_1, predicate_2) {
+function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
   destroyChart();
 
   var customTooltips = function(tooltip) {
@@ -96,23 +96,27 @@ function updateChart(input_nation, predicate_1, predicate_2) {
     labels: years,
     datasets: [{
       label: info_labels[predicate_1].title,
-      borderColor: 'rgba(247, 94, 25, 0.4)',
+      backgroundColor: 'rgba(247, 94, 25, 0.2)',
+      borderColor: 'rgb(247, 94, 25)',
       pointBackgroundColor: 'rgb(247, 94, 25)',
-      fill: false,
+      borderWidth: 1,
+      fill: true,
       data: chartData(predicate_1),
       yAxisID: 'y-axis-1'
     }, {
       label: info_labels[predicate_2].title,
-      borderColor: 'rgba(83, 161, 214, 0.4)',
+      backgroundColor: 'rgba(83, 161, 214, 0.2)',
+      borderColor: 'rgb(83, 161, 214)',
       pointBackgroundColor: 'rgb(83, 161, 214)',
-      fill: false,
+      borderWidth: 1,
+      fill: true,
       data: chartData(predicate_2),
       yAxisID: 'y-axis-2'
     }]
   };
 
   dynamic_chart = new Chart(document.getElementById('chart'), {
-    type: 'line',
+    type: input_graph,
     data: lineChartData,
     options: {
       // title: {

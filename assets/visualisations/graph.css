@@ -21,3 +21,13 @@ canvas{
   height: 10px;
   margin-right: 10px;
 }
+#radio_buttons {
+  margin-bottom: 1rem;
+}
+#radio_buttons p {
+  display: inline;
+  margin-right: 10px;
+}
+#radio_buttons input[type="radio"] {
+  margin-right: 5px;
+}
