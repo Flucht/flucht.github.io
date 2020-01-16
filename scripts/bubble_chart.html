@@ -13,8 +13,8 @@
 
 <style>
 .node:hover{
-  stroke-width: 7px !important;
-  opacity: 1 !important;
+  stroke-width: 5px !important;
+  opacity: 0.8 !important;
 }
 </style>
 
@@ -32,14 +32,14 @@ var svg = d3.select("#my_dataviz")
     .attr("height", height)
 
 // Read data
-d3.csv("https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/map-data.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/map-data-atom.csv", function(data) {
    // Filter a bit the data -> more than 1 million inhabitants
-  data = data.filter(function(d){ return d.features__properties__hasTotal>10 })
+  data = data.filter(function(d){ return d.FeatureCollection.geometry.properties.hasTotal.total>10 })
 
   // Color palette for continents?
-  var color = d3.scaleOrdinal()
-    .domain(data)
-    .range(["#990000", "#DD310B", "#ED5E19", "#FF7D14", "#FF9035", "#FFA851", "#FFC37F", "#FFE1BF"])
+  var color = d3.scaleThreshold()
+    .domain([37500, 75000, 750000, 7500000, 30000000, 45000000, 60000000])
+    .range(["#FFE1BF", "#FFC37F", "#FFA851", "#FF9035", "#FF7D14", "#ED5E19","#DD310B", "#990000"])
 
   // Size scale for countries
   var size = d3.scaleLinear()
@@ -64,7 +64,7 @@ d3.csv("https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/ma
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.features__properties__name + '</u>' + "<br>" + d.features__properties__hasTotal + " Total Displaced Population")
+      .html('<u>' + d.FeatureCollection.geometry.properties.name + '</u>' + "<br>" + d.FeatureCollection.geometry.properties.hasTotal.total + " Total Displaced Population")
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -80,10 +80,10 @@ d3.csv("https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/ma
     .enter()
     .append("circle")
       .attr("class", "node")
-      .attr("r", function(d){ return size(d.features__properties__hasTotal)})
+      .attr("r", function(d){ return size(d.FeatureCollection.geometry.properties.hasTotal.total)})
       .attr("cx", width / 2)
       .attr("cy", height / 2)
-      .style("fill", function(d){ return color(d)})
+      .style("fill", function(d){ return color(d.FeatureCollection.geometry.properties.hasTotal.total)})
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
       .style("stroke-width", 1)
@@ -100,7 +100,7 @@ d3.csv("https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/ma
   var simulation = d3.forceSimulation()
       .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
-      .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (size(d.features__properties__hasTotal)+6) }).iterations(1)) // Force that avoids circle overlapping
+      .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (size(d.FeatureCollection.geometry.properties.hasTotal.total)+6) }).iterations(1)) // Force that avoids circle overlapping
 
   // Apply these forces to the nodes and update their positions.
   // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
