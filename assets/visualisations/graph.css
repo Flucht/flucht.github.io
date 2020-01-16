@@ -31,3 +31,6 @@ canvas{
 #radio_buttons input[type="radio"] {
   margin-right: 5px;
 }
+select {
+  width: 100%;
+}

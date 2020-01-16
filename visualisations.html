@@ -624,12 +624,7 @@
     for (var i = 0; i < options.length; i++) {
         var option = document.createElement('option');
         option.value = options[i];
-        if (options[i].length > 26) {
-          text = options[i].substring(0, 26) + '...';
-          option.text = text;
-        } else {
-          option.text = options[i];
-        }
+        option.text = options[i];
         select.appendChild(option);
     }
   </script>
