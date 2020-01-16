@@ -51,8 +51,8 @@ function updateMap(predicate) {
   var step = []
   function getMax(arr, prop) {
     for (var i=0 ; i<arr.length ; i++) {
-      if (max == null || parseFloat(arr[i]['properties'][prop]["total"]) > parseFloat(max)){
-        max = arr[i]['properties'][prop]["total"];
+      if (max == null || parseFloat(arr[i]['properties'][prop]['total']) > parseFloat(max)){
+        max = arr[i]['properties'][prop]['total'];
       }
     }
     if (String(parseInt(max)).length > 2) {
