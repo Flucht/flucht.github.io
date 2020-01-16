@@ -9,7 +9,7 @@ var svg = d3.select("#my_dataviz")
     .attr("height", height)
 
 // Read data
-d3.json("data/map-data.json", function(data) {
+d3.json("data/map-data.json", id='bubble', function(data) {
 
   console.log(data)
    // Filter a bit the data -> more than 1 million inhabitants
