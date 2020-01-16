@@ -1849,15 +1849,18 @@ body {
   color: #ED5E19 !important;
 }
 .cid-rvgZTtGgYU {
-  padding-top: 135px;
+  padding-top: 235px;
   padding-bottom: 135px;
-  background-color: #160F0B;
+  /* background-color: #160F0B; */
+  background-image: url(../../movement.gif);
+  background-position: center bottom;
+  background-size: cover;
 }
 .cid-rvgZTtGgYU H3 {
-  color: #53A1D6;
+  color: #000;
 }
 .cid-rvgZTtGgYU H1 {
-  color: #53A1D6;
+  color: #000;
 }
 .cid-rvhdshBDds {
   padding-top: 60px;
@@ -5980,7 +5983,7 @@ body {
 }
 .cid-rvgZMVDNg8 .navbar {
   padding: .5rem 0;
-  background: #160F0B;
+  background: rgba(22,15,11,0.8);
   transition: none;
   min-height: 77px;
 }
