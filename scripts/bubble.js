@@ -1,4 +1,3 @@
-<div id="bubble"></div>
 // set the dimensions and margins of the graph
 var width = 460
 var height = 460
@@ -45,7 +44,7 @@ d3.json("data/map-data.json", function(data) {
     .range([7, 55])  // circle will be between 7 and 55 px wide
 
   // create a tooltip
-  var Tooltip = d3.select("#my_dataviz")
+  var Tooltip = d3.select("#bubble")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
