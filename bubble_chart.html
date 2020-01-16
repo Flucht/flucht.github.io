@@ -70,6 +70,7 @@ d3.json("data/map-data.json", function(data) {
   var Tooltip = d3.select("#my_dataviz")
     .append("div")
     .style("opacity", 0)
+    .style("position", "absolute")
     .attr("class", "tooltip")
     .style("background-color", "white")
     .style("border", "solid")
@@ -84,7 +85,7 @@ d3.json("data/map-data.json", function(data) {
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.properties.name + '</u>' + "<br>" + d.properties.hasTotal.total + " Total Displaced Population")
+      .html('<u>' + d.properties.name + '</u>' + '<br>' + d.properties.hasTotal.total + ' Total Displaced Population')
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
