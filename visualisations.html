@@ -141,13 +141,68 @@
         </div>
       </div>
 
+      <div id="tab2" class="tab-pane" role="tabpanel">
 
+        <div class="container">
+          <div class="media-container-row">
+            <div class="col-9">
+              <canvas id="chart"></canvas>
+            </div>
+            <div class="col-3">
+              <div id="radio_buttons">
+                <label for="graph_type"><b>Graph type:</b></label><br/>
+                <p><input type="radio" name="graph_type" value="bar" class="graph_data">Bar</input><p>
+                <p><input type="radio" name="graph_type" value="line" class="graph_data" checked>Line</input><p>
+              </div>
+              <p>
+                <label for="nation"><b>Nation:</b></label><br/>
+                <select class="graph_data" id="nation" name="nation">
+                </select>
+              </p>
+
+                <p>
+                  <label for="predicate_1"><b>First dataset:</b></label><br/>
+                  <select class="graph_data" id="predicate_1" name="predicate_1">
+                    <option value="hasTotal">Total Displaced Population</option>
+                    <option value="hasDemocracy">EIU Democracy Index</option>
+                    <option value="hasGDPCapConstant">Constant GDP per Capita</option>
+                    <option value="hasGDPCapGrowth">Growth of GDP per Capita</option>
+                    <option value="hasIncomeCapConstant">Constant Income per Capita</option>
+                    <option value="hasIncomeCapGrowth">Growth of Income per Capita</option>
+                    <option value="hasUnemploymentILO">Unemployment Rate [ILO]</option>
+                    <option value="hasUnemploymentNational">Unemployment Rate [national]</option>
+                    <option value="hasDeathUCDP">Total Deaths [UCDP]</option>
+                    <option value="hasDeathsTerrorism">Deaths through Terrorism</option>
+                    <option value="hasWoundedTerrorism">Wounded through Terrorism</option>
+                  </select>
+                </p>
+
+                <p>
+                  <label for="predicate_2"><b>Second dataset:</b></label><br/>
+                  <select class="graph_data" id="predicate_2" name="predicate_2">
+                    <option value="hasTotal">Total Displaced Population</option>
+                    <option value="hasDemocracy" selected>EIU Democracy Index</option>
+                    <option value="hasGDPCapConstant">Constant GDP per Capita</option>
+                    <option value="hasGDPCapGrowth">Growth of GDP per Capita</option>
+                    <option value="hasIncomeCapConstant">Constant Income per Capita</option>
+                    <option value="hasIncomeCapGrowth">Growth of Income per Capita</option>
+                    <option value="hasUnemploymentILO">Unemployment Rate [ILO]</option>
+                    <option value="hasUnemploymentNational">Unemployment Rate [national]</option>
+                    <option value="hasDeathUCDP">Total Deaths [UCDP]</option>
+                    <option value="hasDeathsTerrorism">Deaths through Terrorism</option>
+                    <option value="hasWoundedTerrorism">Wounded through Terrorism</option>
+                  </select>
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
 
     <div id="tab2" class="tab-pane" role="tabpanel">
         <div class="container">
           <div class="media-container-row">
             <div class="col-9">
-              <canvas id="#bubble"></canvas>
+              <canvas id="bubble"></canvas>
             </div>
             <div class="col-3">
               <div id="radio_buttons">
