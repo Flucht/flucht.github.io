@@ -3,7 +3,7 @@ var width = 460
 var height = 460
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("#bubble")
   .append("svg")
     .attr("width", width)
     .attr("height", height)
