@@ -1852,7 +1852,11 @@ body {
   padding-top: 235px;
   padding-bottom: 135px;
   background-color: #EDE9E8;
-  background-image: url(../../movement.gif);
+  background:
+    linear-gradient(
+      rgba(237,233,0,0.2),
+      rgba(237,233,232,0.05)
+    ), url(../../movement.gif);
   background-position: center bottom;
   background-size: cover;
 }
