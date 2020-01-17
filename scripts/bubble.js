@@ -126,5 +126,4 @@ d3.json("data/map-data.json", function(data) {
     d.fx = null;
     d.fy = null;
   }
-
 })

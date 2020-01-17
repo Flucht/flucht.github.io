@@ -2,6 +2,10 @@
  * Mobirise v4 theme (https://mobirise.com/)
  * Copyright 2017 Mobirise
  */
+.stars {
+  color: #ffc107!important;
+}
+
 section {
   background-color: #eeeeee; }
 

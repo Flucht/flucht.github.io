@@ -22,7 +22,24 @@
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   <link rel="stylesheet" href="assets/visualisations/style.css" type="text/css">
 
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
 
+  <style>
+    .table th {
+      width: 20%;
+    }
+    .table td {
+      width: 80%;
+    }
+    table.worldbank th {
+      width: 10%;
+    }
+    table.worldbank td {
+      width: 15%;
+    }
+  </style>
 
 </head>
 <body>
@@ -73,229 +90,693 @@
             </div>
         </div>
     </div>
+
 </section>
 
-<section class="section-table cid-rvsRkXerWX" id="table1-1x">
+<section class="tabs2 cid-rvsO0Sfnun" id="tabs2-1t">
+    <div class="container">
+      <div class="media-container-row">
+        <div class="col-12 col-l-8">
+          <ul class="nav pt-3 nav-tabs" role="tablist">
+            <li class="nav-item"><a class="nav-link mbr-fonts-style show active display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab0" aria-selected="true">Flucht</a></li>
+            <li class="nav-item"><a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab1" aria-selected="false">UNHCR</a></li>
+            <li class="nav-item"><a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab2" aria-selected="false">World Bank</a></li>
+            <li class="nav-item"><a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab3" aria-selected="false">GTD</a></li>
+            <li class="nav-item"><a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab4" aria-selected="false">UCDP</a></li>
+            <li class="nav-item"><a class="nav-link mbr-fonts-style display-7" role="tab" data-toggle="tab" href="#tabs2-1t_tab5" aria-selected="false">EIU</a></li>
+        </div>
+      </div>
+    </div>
+
+  <div class="tab-content">
 
 
+    <!------------>
+    <!-- FLUCHT -->
+    <!------------>
 
-  <div class="container container-table">
 
-      <p class="mbr-text pb-5 mbr-fonts-style display-7">
-            Blablablabla <a href="https://github.com/europinion/europinion.github.io/tree/master/scripts" class="text-info" target="_blank">LINK</a> Blablablabla <a href="http://wit.istc.cnr.it/stlab-tools/sentilo/index.html" class="text-info" target="_blank">LINK</a>.&nbsp;</p>
-      <!-- <div class="table-wrapper">
-        <div class="container">
-          <div class="row search">
-            <div class="col-md-6"></div>
-            <div class="col-md-6">
-                <div class="dataTables_filter">
-                  <label class="searchInfo mbr-fonts-style display-7">Search:</label>
-                  <input class="form-control input-sm" disabled="">
+    <div id="tab1" class="tab-pane in active" role="tabpanel">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="card">
+            <div class="card-header">
+              <h2 id="mashup-dataset" class="card-title">Flucht Data</h2>
+              <h6 class="card-subtitle mb-2">
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </span>
+                <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data">5 stars web data</a>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Title</th>
+                            <td>Flucht</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Distribution</th>
+                            <td>
+                              <a href="#">CSV <p>INSERT LINKS</p></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>DESCRIPTION.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Theme</th>
+                            <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Issued</th>
+                            <td>2020-01-17</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Modified</th>
+                            <td>2020-01-17</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">License</th>
+                            <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Language</th>
+                            <td>English</td>
+                          </tr>
+                          <tr><th scope="row">Keywords</th>
+                          <td>economics, refugees, politics, violence, terrorism</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Version</th>
+                            <td>0.1.0</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rights Holder</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Publisher</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Creator</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Spatial Coverage</th>
+                            <td>Global</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Temporal Coverage</th>
+                            <td>2008 – 2018</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="container scroll">
-          <table class="table isSearch" cellspacing="0">
-            <thead>
-              <tr class="table-heads ">
-
-
-
-
-              <th class="head-item mbr-fonts-style display-7">
-                      Language</th><th class="head-item mbr-fonts-style display-7">Abbreviation</th><th class="head-item mbr-fonts-style display-7">Term</th><th class="head-item mbr-fonts-style display-7">
-                      Acquired</th><th class="head-item mbr-fonts-style display-7">
-                      Analysed</th></tr>
-            </thead>
-
-            <tbody>
-
-
-            <tr>
-
-              <td class="body-item mbr-fonts-style display-7">Bulgarian</td><td class="body-item mbr-fonts-style display-7">bg</td><td class="body-item mbr-fonts-style display-7">Европейски избори</td><td class="body-item mbr-fonts-style display-7">25</td><td class="body-item mbr-fonts-style display-7">20</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Croatian</td><td class="body-item mbr-fonts-style display-7">hr</td><td class="body-item mbr-fonts-style display-7">Europski izbori</td><td class="body-item mbr-fonts-style display-7">99</td><td class="body-item mbr-fonts-style display-7">29</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Czech</td><td class="body-item mbr-fonts-style display-7">cs</td><td class="body-item mbr-fonts-style display-7">Evropské volby</td><td class="body-item mbr-fonts-style display-7">126</td><td class="body-item mbr-fonts-style display-7">109</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Danish</td><td class="body-item mbr-fonts-style display-7">da</td><td class="body-item mbr-fonts-style display-7">EU-valget</td><td class="body-item mbr-fonts-style display-7">72</td><td class="body-item mbr-fonts-style display-7">58</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Dutch</td><td class="body-item mbr-fonts-style display-7">nl</td><td class="body-item mbr-fonts-style display-7">Europese verkiezingen</td><td class="body-item mbr-fonts-style display-7">1967</td><td class="body-item mbr-fonts-style display-7">623</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">English</td><td class="body-item mbr-fonts-style display-7">en</td><td class="body-item mbr-fonts-style display-7">European elections</td><td class="body-item mbr-fonts-style display-7">28787</td><td class="body-item mbr-fonts-style display-7">4708</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Estonian</td><td class="body-item mbr-fonts-style display-7">et</td><td class="body-item mbr-fonts-style display-7">Euroopa valimised</td><td class="body-item mbr-fonts-style display-7">9</td><td class="body-item mbr-fonts-style display-7">0</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Finnish</td><td class="body-item mbr-fonts-style display-7">fi</td><td class="body-item mbr-fonts-style display-7">EU-vaalit</td><td class="body-item mbr-fonts-style display-7">44</td><td class="body-item mbr-fonts-style display-7">10</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">French</td><td class="body-item mbr-fonts-style display-7">fr</td><td class="body-item mbr-fonts-style display-7">Élections européennes</td><td class="body-item mbr-fonts-style display-7">22991</td><td class="body-item mbr-fonts-style display-7">1827</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">German</td><td class="body-item mbr-fonts-style display-7">de</td><td class="body-item mbr-fonts-style display-7">Europawahl</td><td class="body-item mbr-fonts-style display-7">16730</td><td class="body-item mbr-fonts-style display-7">10784</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Greek</td><td class="body-item mbr-fonts-style display-7">el</td><td class="body-item mbr-fonts-style display-7">Ευρωεκλογές</td><td class="body-item mbr-fonts-style display-7">5381</td><td class="body-item mbr-fonts-style display-7">3523</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Hungarian</td><td class="body-item mbr-fonts-style display-7">hu</td><td class="body-item mbr-fonts-style display-7">Európai választások</td><td class="body-item mbr-fonts-style display-7">14</td><td class="body-item mbr-fonts-style display-7">3</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Irish</td><td class="body-item mbr-fonts-style display-7">ga</td><td class="body-item mbr-fonts-style display-7">Na toghcháin Eorpacha</td><td class="body-item mbr-fonts-style display-7">3</td><td class="body-item mbr-fonts-style display-7">0</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Italian</td><td class="body-item mbr-fonts-style display-7">it</td><td class="body-item mbr-fonts-style display-7">Elezioni europee</td><td class="body-item mbr-fonts-style display-7">12099</td><td class="body-item mbr-fonts-style display-7">3191</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Latvian</td><td class="body-item mbr-fonts-style display-7">lv</td><td class="body-item mbr-fonts-style display-7">Eiropas vēlēšanas</td><td class="body-item mbr-fonts-style display-7">74</td><td class="body-item mbr-fonts-style display-7">15</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Lithuanian</td><td class="body-item mbr-fonts-style display-7">lt</td><td class="body-item mbr-fonts-style display-7">EP rinkimai</td><td class="body-item mbr-fonts-style display-7">6</td><td class="body-item mbr-fonts-style display-7">3</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Maltese</td><td class="body-item mbr-fonts-style display-7">mt</td><td class="body-item mbr-fonts-style display-7">L-elezzjonijiet Ewropej</td><td class="body-item mbr-fonts-style display-7">1</td><td class="body-item mbr-fonts-style display-7">0</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Polish</td><td class="body-item mbr-fonts-style display-7">pl</td><td class="body-item mbr-fonts-style display-7">Wybory europejskie</td><td class="body-item mbr-fonts-style display-7">196</td><td class="body-item mbr-fonts-style display-7">46</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Portuguese</td><td class="body-item mbr-fonts-style display-7">pt</td><td class="body-item mbr-fonts-style display-7">Eleições europeias</td><td class="body-item mbr-fonts-style display-7">1432</td><td class="body-item mbr-fonts-style display-7">491</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Romanian</td><td class="body-item mbr-fonts-style display-7">ro</td><td class="body-item mbr-fonts-style display-7">Alegerile europene</td><td class="body-item mbr-fonts-style display-7">37</td><td class="body-item mbr-fonts-style display-7">17</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Slovak</td><td class="body-item mbr-fonts-style display-7">sk</td><td class="body-item mbr-fonts-style display-7">Európske voľby</td><td class="body-item mbr-fonts-style display-7">4</td><td class="body-item mbr-fonts-style display-7">3</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Slovenian</td><td class="body-item mbr-fonts-style display-7">sl</td><td class="body-item mbr-fonts-style display-7">Evropske volitve</td><td class="body-item mbr-fonts-style display-7">94</td><td class="body-item mbr-fonts-style display-7">34</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Spanish</td><td class="body-item mbr-fonts-style display-7">es</td><td class="body-item mbr-fonts-style display-7">Elecciones europeas</td><td class="body-item mbr-fonts-style display-7">7185</td><td class="body-item mbr-fonts-style display-7">2048</td></tr><tr>
-
-
-
-
-              <td class="body-item mbr-fonts-style display-7">Swedish</td><td class="body-item mbr-fonts-style display-7">sv</td><td class="body-item mbr-fonts-style display-7">EU-valet</td><td class="body-item mbr-fonts-style display-7">1596</td><td class="body-item mbr-fonts-style display-7">562</td></tr></tbody>
-          </table>
-        </div> -->
-        <div class="container table-info-container">
-          <div class="row info">
-            <div class="col-md-6">
-              <div class="dataTables_info mbr-fonts-style display-7">
-                <span class="infoBefore">Showing</span>
-                <span class="inactive infoRows"></span>
-                <span class="infoAfter">entries</span>
-                <span class="infoFilteredBefore">(filtered from</span>
-                <span class="inactive infoRows"></span>
-                <span class="infoFilteredAfter"> total entries)</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!----------->
+    <!-- UNHCR -->
+    <!----------->
+
+
+    <div id="tab2" class="tab-pane" role="tabpanel">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+            <div class="card">
+              <div class="card-header">
+                <h2 id="mashup-dataset" class="card-title">United Nations High Commissioner for Refugees</h2>
+                <h6 class="card-subtitle mb-2">
+                  <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data">3 stars web data</a>
+                </h6>
+              </div>
+
+              <div class="card-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Title</th>
+                              <td>Persons of Concerns</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Distribution</th>
+                              <td>
+                                <a href="http://popstats.unhcr.org/en/persons_of_concern.csv" target="_blank">CSV</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Description</th>
+                              <td><p>The database currently contains data about UNHCR's populations of concern from the year 1951 up to 2017. The UNHCR populations of concern include: refugees, asylum-seekers, internally displaced persons, returned refugees, returned IDPs, stateless persons, others of concern.</p>
+                              <p>The dataset Persons of Concerns is published by UNHCR and contains the information about where refugees, asylum-seekers, returned refugees, internally displaced persons, returned IDPs, stateless persons and other persons of concerns are currently residing and originally coming from.</p></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Theme</th>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                  culture and sport INSERT LINKS and THEME</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">License</th>
+                              <td>No license</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Language</th>
+                              <td>English</td>
+                            </tr>
+                            <tr><th scope="row">Keywords</th>
+                            <td>refugees, asylum-seekers, internally displaced persons, stateless</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Rights Holder</th>
+                              <td><a href="http://popstats.unhcr.org/en/overview" target="_blank">The UN Refugee Agency</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Publisher</th>
+                              <td><a href="http://popstats.unhcr.org/en/overview" target="_blank">The UN Refugee Agency</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Creator</th>
+                              <td><a href="http://popstats.unhcr.org/en/overview" target="_blank">The UN Refugee Agency</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Spatial Coverage</th>
+                              <td>Global</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Temporal Coverage</th>
+                              <td>1951 – 2017</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-</section>
 
 
-<section class="engine"><a href="https://mobirise.info/n">free simple site templates</a></section><section class="mbr-section content4 cid-rvrRYYvjg8 twitter" id="content4-17" style="background-color: transparent; z-index: 5;">
+    <!---------------->
+    <!-- WORLD BANK -->
+    <!---------------->
 
 
+    <div id="tab3" class="tab-pane" role="tabpanel">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h2 id="mashup-dataset" class="card-title">The World Bank Data</h2>
+                <h6 class="card-subtitle mb-2">
+                  <span class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </span>
+                  <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data">3 stars web data</a>
+                </h6>
+              </div>
 
-    <div class="container pt-0">
-        <div class="media-container-row">
-            <div class="title col-12 col-l-8 ">
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">Blablablabla.</h3>
-                </br>
-                <p class="mbr-text pb-2 mbr-fonts-style display-7">Blablablabla</p>
-                <ul class="mbr-text mbr-fonts-style display-7">
-                  <p class="mbr-text mbr-fonts-style display-7">Blablablabla:
-                  <li>Blablablabla</li>
-                  <li>Blablablabla</li>
-                  <li>Blablablabla</li>
-                </p></ul>
-
-                <ul class="mbr-text mbr-fonts-style display-7">
-                  <p class="mbr-text mbr-fonts-style display-7">Blablablabla:
-                  <li>Blablablabla</li>
-                  <li>Blablablabla</li></p>
-                </ul>
-                <p class="mbr-text pb-5 mbr-fonts-style display-7">Blablablabla.</p>
-         </div>
+              <div class="card-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                      <div class="table-responsive">
+                        <table class="table worldbank">
+                          <tbody>
+                            <tr>
+                              <th scope="row">Title</th>
+                              <td>Constant GDP per Capita</td>
+                              <td>GDP per Capita Growth</td>
+                              <td>Unemployment ILO Estimate</td>
+                              <td>Unemployment National Estimate</td>
+                              <td>Constant Income per Capita</td>
+                              <td>Income Growth</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Distributions</th>
+                              <td>
+                                <a href="http://api.worldbank.org/v2/en/indicator/NY.GDP.PCAP.KD?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                              <td>
+                                <a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.KD.ZG?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                              <td>
+                                <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                              <td>
+                                <a href="https://data.worldbank.org/indicator/SL.UEM.TOTL.NE.ZS?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                              <td>
+                                <a href="https://data.worldbank.org/indicator/NY.ADJ.NNTY.PC.KD?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                              <td>
+                                <a href="https://data.worldbank.org/indicator/NY.ADJ.NNTY.PC.KD.ZG?downloadformat=csv" target="_blank">CSV</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Description</th>
+                              <td>The dataset is published by the World Bank. The GDP per capita is the gross domestic product divided by midyear population. The GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. The constant GDP assess for inflation. Values are expressed in US$.</td>
+                              <td>The dataset is published by the World Bank. The data contains information about the annual percentage growth of the GDP per capita.</td>
+                              <td>The dataset is published by the World Bank. The data contains information about unemployment rates (%) per country. Considering every unemployed person (min. 15 years old). The International Labour Organization (ILO) estimate is harmonising different definitions of unemployment.</td>
+                              <td>The dataset is published by the World Bank. The data contains information about unemployment rates (%) per country. The national unemployment estimate is based on the numbers which countries report based on their definition of unemployment.</td>
+                              <td>The dataset is published by the World Bank. The data contains information about the incoming money flow of nations. The money flow is created by, for example, selling national resources. For the income per capita the total income is divided by midyear population. The constant income assesses for inflation. Values are expressed in US$.</td>
+                              <td>The dataset is published by the World Bank. The data contains information about the incoming money flow of nations. The money flow is created by, for example, selling national resources. The data represent the annual % income growth. Values are expressed in US$.</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Theme</th>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                              <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">License</th>
+                              <td colspan="6"><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Language</th>
+                              <td colspan="6">English</td>
+                            </tr>
+                            <tr><th scope="row">Keywords</th>
+                            <td colspan="2">gross domestic product, GDP, GDP per capita, economics</td>
+                            <td colspan="2">unemployment, economics</td>
+                            <td>income, commodities, per capita, constant</td>
+                            <td>income, commodities, growth</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Rights Holder</th>
+                              <td colspan="6"><a href="https://www.worldbank.org" target="_blank">The World Bank Group</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Publisher</th>
+                              <td colspan="6"><a href="https://www.worldbank.org" target="_blank">The World Bank Group</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Creator</th>
+                              <td colspan="2"><a href="https://www.worldbank.org" target="_blank">World Bank national accounts data, and OECD National Accounts data files.</a></td>
+                              <td colspan="2"><a href="https://www.ilo.org/global/lang--en/index.htm" target="_blank">International Labour Organization, ILOSTAT database</a></td>
+                              <td colspan="2"><a href="https://www.worldbank.org" target="_blank">The World Bank Group</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Spatial Coverage</th>
+                              <td colspan="6">Global</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">Temporal Coverage</th>
+                              <td>1960 – 2018</td>
+                              <td>1961 – 2018</td>
+                              <td>1991 – 2019</td>
+                              <td>1969 – 2019</td>
+                              <td>1970 – 2017</td>
+                              <td>1971 – 2017</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+
+
+    <!------------------------------->
+    <!-- Global Terrorism Database -->
+    <!------------------------------->
+
+
+    <div id="tab4" class="tab-pane" role="tabpanel">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="card">
+            <div class="card-header">
+              <h2 id="mashup-dataset" class="card-title">Global Terrorism Database</h2>
+              <h6 class="card-subtitle mb-2">
+                <span class="stars">
+                </span>
+                <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data"><b>zero</b> stars web data</a>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Title</th>
+                            <td>Global Terrorism Database</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Distribution</th>
+                            <td>
+                              <a href="#">CSV <p>INSERT LINKS</p></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>The Global Terrorism Database (GTD) is an open-source database including information on domestic and international terrorist attacks around the world from 1970 through 2018.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Theme</th>
+                            <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Modified</th>
+                            <td>2019-09</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">License</th>
+                            <td><a href="https://www.start.umd.edu/gtd/end-user-agreement/" target="_blank">GTD End User Agreement</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Language</th>
+                            <td>English</td>
+                          </tr>
+                          <tr><th scope="row">Keywords</th>
+                          <td>terrorism, attacks, deaths, violence</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rights Holder</th>
+                            <td><a href="https://www.chcglobal.co.uk" target="_blank">CHC Insurance Services Ltd</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Publisher</th>
+                            <td><a href="https://www.chcglobal.co.uk" target="_blank">CHC Insurance Services Ltd</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Creator</th>
+                            <td><a href="https://www.start.umd.edu/gtd/" target="_blank">National Consortium for the Study of Terrorism and Responses to Terrorism</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Spatial Coverage</th>
+                            <td>Global</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Temporal Coverage</th>
+                            <td>1970 – 2018</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!----------------------------------->
+    <!-- Uppsala Conflict Data Program -->
+    <!----------------------------------->
+
+
+    <div id="tab5" class="tab-pane" role="tabpanel">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="card">
+            <div class="card-header">
+              <h2 id="mashup-dataset" class="card-title">Uppsala Conflict Data Program</h2>
+              <h6 class="card-subtitle mb-2">
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </span>
+                <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data">5 stars web data</a>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Title</th>
+                            <td>Flucht</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Distribution</th>
+                            <td>
+                              <a href="http://ucdp.uu.se/downloads/ged/ged191-csv.zip">CSV</a>, <a href="https://ucdp.uu.se/apidocs/">API</a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>The Uppsala Conflict Data Program (UCDP) is the world’s main provider of data on organized violence and the oldest ongoing data collection project for civil war, with a history of almost 40 years.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Theme</th>
+                            <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Modified</th>
+                            <td>2019-05-27</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">License</th>
+                            <td>No license</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Language</th>
+                            <td>English</td>
+                          </tr>
+                          <tr><th scope="row">Keywords</th>
+                          <td>war, deaths, wounded, violence, terrorism</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Version</th>
+                            <td>19.1</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rights Holder</th>
+                            <td><a href="https://ucdp.uu.se/" target="_blank">Uppsala Conflict Data Program</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Publisher</th>
+                            <td><a href="https://ucdp.uu.se/" target="_blank">Uppsala Conflict Data Program</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Creator</th>
+                            <td><a href="https://ucdp.uu.se/" target="_blank">Uppsala Conflict Data Program</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Spatial Coverage</th>
+                            <td>Global w/o Syria due to ongoing research related to the Syria dataset</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Temporal Coverage</th>
+                            <td>1989 – 2018</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!--------------------------------->
+    <!-- Economist Intelligence Unit -->
+    <!--------------------------------->
+
+
+    <div id="tab6" class="tab-pane" role="tabpanel">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <div class="card">
+            <div class="card-header">
+              <h2 id="mashup-dataset" class="card-title">Flucht Data</h2>
+              <h6 class="card-subtitle mb-2">
+                <span class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </span>
+                <a target="_blank" href="https://5stardata.info/en/#what-are-the-costs--benefits-of--web-data">5 stars web data</a>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <h4>Metadata <small>(<a target="_blank" href="https://raw.githubusercontent.com/Flucht/flucht.github.io/master/data/DCAT_AP_metadata.rdf">.rdf</a>)</small></h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th scope="row">Title</th>
+                            <td>Flucht</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Distribution</th>
+                            <td>
+                              <a href="#">CSV <p>INSERT LINKS</p></a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description</th>
+                            <td>DESCRIPTION.</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Theme</th>
+                            <td><a href="http://publications.europa.eu/resource/authority/data-theme/EDUC">Education,
+                                culture and sport INSERT LINKS and THEME</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Issued</th>
+                            <td>2020-01-17</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Modified</th>
+                            <td>2020-01-17</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">License</th>
+                            <td><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Language</th>
+                            <td>English</td>
+                          </tr>
+                          <tr><th scope="row">Keywords</th>
+                          <td>economics, refugees, politics, violence, terrorism</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Version</th>
+                            <td>0.1.0</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rights Holder</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Publisher</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Creator</th>
+                            <td><a href="index.html">Flucht</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Spatial Coverage</th>
+                            <td>Global</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Temporal Coverage</th>
+                            <td>2008 – 2018</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
 <section once="footers" class="cid-rvh7pWUyp3" id="footer7-1j">
-
-
-
-
-
     <div class="container">
         <div class="media-container-row align-center mbr-white">
             <div class="row row-links">
                 <ul class="foot-menu">
-
-
-
-
-
                 <li class="foot-menu-item mbr-fonts-style display-7"><a href="contact.html" class="text-white"><strong>Contact</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="disclaimer.html" class="text-white"><strong>Disclaimer</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="references.html" class="text-white"><strong>References</strong></a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="license.html" class="text-white"><strong>License</strong></a></li></ul>
             </div>
 
@@ -306,6 +787,7 @@
     </div>
 </section>
 
+  <script type="text/javascript" src="data/map-data.js"></script>
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/popper/popper.min.js"></script>
@@ -314,10 +796,64 @@
   <script src="assets/dropdown/js/nav-dropdown.js"></script>
   <script src="assets/dropdown/js/navbar-dropdown.js"></script>
   <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/datatables/jquery.data-tables.min.js"></script>
+  <!-- <script src="assets/datatables/jquery.data-tables.min.js"></script> -->
   <script src="assets/datatables/data-tables.bootstrap4.min.js"></script>
+  <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/theme/js/script.js"></script>
+
+  <script>
+  function addCell(tr, val) {
+      var td = document.createElement('td');
+
+      td.innerHTML = val;
+      td.classList.add("body-item");
+      td.classList.add("mbr-fonts-style");
+      td.classList.add("display-7");
+
+      tr.appendChild(td)
+    }
+
+
+    function addRow(tbl, name, properties) {
+      var tr = document.createElement('tr');
+
+      addCell(tr, name);
+
+      for (var i = 0; i < properties.length; i++) {
+        addCell(tr, properties[i]['total']);
+      }
+
+      tbl.appendChild(tr)
+    }
+
+    function createTable() {
+      tbl = document.getElementById('tbody');
+      var array = nationsData['features'];
+
+      for (var i = 0; i < array.length; i++) {
+        var properties = [
+          array[i].properties.hasTotal,
+          array[i].properties.hasDemocracy,
+          array[i].properties.hasGDPCapConstant,
+          array[i].properties.hasGDPCapGrowth,
+          array[i].properties.hasIncomeCapConstant,
+          array[i].properties.hasIncomeCapGrowth,
+          array[i].properties.hasUnemploymentILO,
+          array[i].properties.hasUnemploymentNational,
+          array[i].properties.hasDeathUCDP,
+          array[i].properties.hasDeathsTerrorism,
+          array[i].properties.hasWoundedTerrorism
+          ]
+
+        addRow(tbl, array[i].properties.name, properties);
+      }
+
+    }
+
+    createTable()
+
+  </script>
 
 
 </body>
