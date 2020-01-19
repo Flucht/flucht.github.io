@@ -403,7 +403,7 @@
 <dcat:Dataset rdf:about="https://flucht.github.io"> <!--our own dataset-->
   <dct:identifier>https://flucht.github.io</dct:identifier>
   <dct:title>Flucht dataset</dct:title>
-  <dct:description>The Flucht dataset contains datsets from catalogs concerning the push factors of refugees, i.e. the political or economical situation in the country of origin. The catalog was created within a course at the University of Bologna and is not maintained. However, the datasets used for this catalog are maintained by the linked institutions.</dct:description>
+  <dct:description>The Flucht dataset contains datasets from catalogs concerning the push factors of refugees, i.e. the political or economical situation in the country of origin. The catalog was created within a course at the University of Bologna and is not maintained. However, the datasets used for this catalog are maintained by the linked institutions.</dct:description>
   <dcat:keyword>refugees</dcat:keyword>
   <dcat:keyword>open data</dcat:keyword>
   <dcat:keyword>economic factors</dcat:keyword>
