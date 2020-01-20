@@ -37,7 +37,7 @@ function updateMap(predicate) {
 
   info.update = function (props) {
     this._div.innerHTML = '<h4>' + info_labels[predicate].title + '</h4>' +  (props ?
-      '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]["total"]) + ' ' + info_labels[predicate].type
+      '<b>' + props.name + '</b><br />' + convertNumber(props[predicate]["average"]) + ' ' + info_labels[predicate].type + ' (average/year)'
       : 'Hover over a state');
 
     if (document.getElementById("data-description") != null) {
@@ -51,8 +51,8 @@ function updateMap(predicate) {
   var step = []
   function getMax(arr, prop) {
     for (var i=0 ; i<arr.length ; i++) {
-      if (max == null || parseFloat(arr[i]['properties'][prop]['total']) > parseFloat(max)){
-        max = arr[i]['properties'][prop]['total'];
+      if (max == null || parseFloat(arr[i]['properties'][prop]['average']) > parseFloat(max)){
+        max = arr[i]['properties'][prop]['average'];
       }
     }
     if (String(parseInt(max)).length > 2) {
@@ -89,7 +89,7 @@ function updateMap(predicate) {
       color: 'white',
       dashArray: '3',
       fillOpacity: 0.7,
-      fillColor: getColor(feature.properties[predicate]["total"])
+      fillColor: getColor(feature.properties[predicate]['average'])
     };
   }
 
@@ -114,8 +114,8 @@ function updateMap(predicate) {
   function updateChart(props) {
     destroyChart();
 
-    if (document.getElementById("map-graph") != null) {
-      chart = new Chart(document.getElementById("map-graph"),{
+    if (document.getElementById('map-graph') != null) {
+      chart = new Chart(document.getElementById('map-graph'),{
         "type":"bar",
         "data":{
           "labels":years,
@@ -140,7 +140,7 @@ function updateMap(predicate) {
     }
   }
 
-  updateChart("emptyChart");
+  updateChart('emptyChart');
 
   function highlightFeature(e) {
     var layer = e.target;

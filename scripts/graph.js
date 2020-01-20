@@ -36,6 +36,7 @@ function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
     }
 
     function getBody(bodyItem) {
+      console.log(bodyItem.lines.toLocaleString())
       return bodyItem.lines;
     }
 
@@ -78,6 +79,7 @@ function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
     tooltipEl.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
   };
 
+
   function chartData(props) {
     var nation = nationsData['features'].find(feature => feature.properties.name === input_nation)
 
@@ -92,7 +94,7 @@ function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
     return data
   }
 
-  var lineChartData = {
+  var finalChartData = {
     labels: years,
     datasets: [{
       label: info_labels[predicate_1].title,
@@ -115,36 +117,47 @@ function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
     }]
   };
 
+
   dynamic_chart = new Chart(document.getElementById('chart'), {
     type: input_graph,
-    data: lineChartData,
+    data: finalChartData,
     options: {
-      // title: {
-      //   display: true,
-      //   text: 'Configure Your Own'
-      // },
       scales: {
 						yAxes: [{
-							type: 'linear',
-							display: true,
-							position: 'left',
-							id: 'y-axis-1',
-						}, {
-							type: 'linear',
-							display: true,
-							position: 'right',
-							id: 'y-axis-2',
-
-							gridLines: {
-								drawOnChartArea: false,
-							},
+  							type: 'linear',
+  							display: true,
+  							position: 'left',
+  							id: 'y-axis-1',
+                gridLines: {
+                  drawOnChartArea: false,
+                },
+                ticks:{
+                  beginAtZero:true,
+                  callback: function(value, index, values) {
+                    return value.toLocaleString('de');
+                  }
+                }
+						  }, {
+  							type: 'linear',
+  							display: true,
+  							position: 'right',
+  							id: 'y-axis-2',
+  							gridLines: {
+  								drawOnChartArea: false,
+  							},
+                ticks:{
+                  beginAtZero:true,
+                  callback: function(value, index, values) {
+                    return value.toLocaleString('de');
+                  }
+                }
 						}],
 					},
       tooltips: {
         enabled: false,
         mode: 'index',
         position: 'nearest',
-        custom: customTooltips
+        custom: customTooltips,
       }
     }
   });

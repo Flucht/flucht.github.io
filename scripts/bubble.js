@@ -11,13 +11,10 @@ var svg = d3.select("#bubble")
 // Read data
 d3.json("data/map-data.json", function(data) {
 
-  console.log(data)
    // Filter a bit the data -> more than 1 million inhabitants
   var filterData = data['features'].filter(function(d){
     return d.properties.hasTotal.total>10
   })
-
-  console.log(filterData)
 
   // Color palette for continents?
   var color = d3.scaleThreshold()
@@ -54,6 +51,15 @@ d3.json("data/map-data.json", function(data) {
     .style("border-radius", "5px")
     .style("padding", "5px")
 
+    function convertNumber(numb) {
+      if (numb > 999) {
+        numb = Math.round(numb).toLocaleString('de')
+      } else {
+        numb = +(Math.round(numb + "e+2")  + "e-2")
+      }
+      return numb
+    }
+
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     Tooltip
@@ -61,7 +67,7 @@ d3.json("data/map-data.json", function(data) {
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.properties.name + '</u>' + "<br>" + d.properties.hasTotal.total + " Total Displaced Population")
+      .html('<u>' + d.properties.name + '</u>' + "<br>" + convertNumber(d.properties.hasTotal.total) + " Total Displaced Population")
       .style("left", (d3.mouse(this)[0]+20) + "px")
       .style("top", (d3.mouse(this)[1]) + "px")
   }
@@ -69,8 +75,6 @@ d3.json("data/map-data.json", function(data) {
     Tooltip
       .style("opacity", 0)
   }
-
-  console.log(filterData)
 
   // Initialize the circle: all located at the center of the svg area
   var node = svg.append("g")
