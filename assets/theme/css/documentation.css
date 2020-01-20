@@ -2,6 +2,9 @@
   padding-top: 230px;
   margin-top: -230px;
 }
+#side-menu-div {
+  border-left: 1px solid #000;
+}
 #side-menu, #side-menu-sub {
   line-height: 1.5;
   font-size: 1rem;
@@ -21,7 +24,8 @@
 }
 #side-menu-wrapper {
   position:fixed;
-  border-left: 1px solid #000;
+  overflow: scroll;
+  transition: bottom 1s;
 }
 .cid-rvhLFeJf7A {
   padding-top: 25px;
