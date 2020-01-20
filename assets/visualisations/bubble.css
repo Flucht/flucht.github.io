@@ -1,10 +1,10 @@
 #bubble {
-  margin-top: 50px;
   margin-bottom: 100px;
 }
 
 #bubble-description {
-  margin-top: 150px;
+  margin-top: 100px;
+  margin-left: 25px;
 }
 
 .node:hover{

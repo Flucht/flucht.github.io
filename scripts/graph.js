@@ -10,6 +10,14 @@ function destroyChart() {
 function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
   destroyChart();
 
+  if (document.getElementById("data-description-predicate-1") != null) {
+    document.getElementById("data-description-predicate-1").innerHTML = '<p><h4>' + info_labels[predicate_1].title + '</h4></p>' + '<p><b>Description:</b>' + '<br />' + info_labels[predicate_1].description + '</p>' + '<p><b>Data provider:</b>' + '<br />' + info_labels[predicate_1].provider + '</p>';
+  }
+
+  if (document.getElementById("data-description-predicate-2") != null) {
+    document.getElementById("data-description-predicate-2").innerHTML = '<p><h4>' + info_labels[predicate_2].title + '</h4></p>' + '<p><b>Description:</b>' + '<br />' + info_labels[predicate_2].description + '</p>' + '<p><b>Data provider:</b>' + '<br />' + info_labels[predicate_2].provider + '</p>';
+  }
+
   var customTooltips = function(tooltip) {
     // Tooltip Element
     var tooltipEl = document.getElementById('chartjs-tooltip');

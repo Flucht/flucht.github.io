@@ -34,3 +34,7 @@ canvas{
 select {
   width: 100%;
 }
+#graph-descriptions {
+  margin-top: 50px;
+  padding: 0 25px;
+}
