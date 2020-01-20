@@ -100,12 +100,12 @@
             <p class="mbr-text pb-2 mbr-fonts-style display-7">
               The datasets used to cover the economic and political aspects affecting immigration include the following data from the respective sources:
              <ul class="mbr-timeline-text mbr-fonts-style display-7">
-               <li>Constant GDP per Capita. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
-               <li>GDP per Capita Growth. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
-               <li>Unemployment ILO Rate. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
-               <li>Unemployment National Rate. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
-               <li>Constant Income per Capita. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
-               <li>Income per Capita Growth. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group</a>.</li>
+               <li>Constant GDP per Capita. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
+               <li>GDP per Capita Growth. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
+               <li>Unemployment ILO Rate. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
+               <li>Unemployment National Rate. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
+               <li>Constant Income per Capita. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
+               <li>Income per Capita Growth. Source: <a href="https://www.worldbank.org" class="text-info" target="_blank">The World Bank Group (WBG)</a>.</li>
                <li>Terrorism. Source: <a href="https://www.start.umd.edu/gtd/" class="text-info" target="_blank">Global Terrorism Database</a> (GTD).</li>
                <li>War and other violent events. Source: <a href="https://ucdp.uu.se/" class="text-info" target="_blank">Uppsala Conflict Data Program</a> (UCDP).</li>
                <li>Quality of democracy. Source: <a href="https://www.eiu.com/n/" class="text-info" target="_blank">The Economist Intelligence Unit</a> (EIU).</li>
@@ -122,7 +122,7 @@
             <ul class="mbr-timeline-text mbr-fonts-style display-7">
               <li>F1. <i>(Meta)data are assigned a globally unique and persistent identifier</i>: both the data we retrieved in the original datasets, the mashed up data and the metadata we created according to the DCAT-AP are compliant with this point, presenting URI.</li>
               <li>F2. <i>Data are described with rich metadata (defined by R1 below)</i>: we associated a rich amount of metadata compliant with the DCAT-AP specification, including not only all the mandatory classes with their respective mandatory properties but also some recommended and optional properties that were useful for our data.</li>
-              <li>F3. <i>Metadata clearly and explicitly include the identifier of the data they describe</i>: for each dataset that is part of a catalogue and for our own dataset we associated to the metadata a unique identifier of the data described by means of the dcat-ap optional property for datasets dct:identifier.</li>
+              <li>F3. <i>Metadata clearly and explicitly include the identifier of the data they describe</i>: for each dataset that is part of a catalogue and for our own dataset we associated to the metadata a unique identifier of the data described by means of the DCAT-AP optional property for datasets dct:identifier.</li>
               <li>F4. <i>(Meta)data are registered or indexed in a searchable resource</i>: All the data we used are identified by an URL that allows to access the source where they are registered. For the creation of the metadata associated with our data we used the DCAT-AP specification, whose aim is to enable a cross-data portal search for data sets and make public sector data better searchable across borders and sectors. Therefore, we can state that our (meta)data are registered in a searchable infrastructure.</li>
             </ul>
             <p class="mbr-text pb-2 mbr-fonts-style display-7"><strong>Accessible</strong>: once the user finds the required data, she/he needs to know how can they be accessed, possibly including authentication and authorisation.</p>
@@ -134,14 +134,14 @@
             </ul>
             <p class="mbr-text pb-2 mbr-fonts-style display-7"><strong>Interoperable</strong>: the data usually need to be integrated with other data. In addition, the data need to interoperate with applications or workflows for analysis, storage, and processing.</p>
             <ul class="mbr-timeline-text mbr-fonts-style display-7">
-              <li>I1. <i>(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation</i>: we used JSON for the representation of the mashed up data and RDF with the xml syntax to describe and structure the metadata.</li>
+              <li>I1. <i>(Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation</i>: we used JSON for the representation of the mashed up data and RDF with the XML syntax to describe and structure the metadata.</li>
               <li>I2. <i>(Meta)data use vocabularies that follow FAIR principles</i>: the annotation format we used allow to use machine-readable terms from any controlled vocabulary. We used the ISO standard vocabulary to represent nations, the Linked Open Data vocabulary specification called DCAT-AP. These vocabularies are documented and resolvable using globally unique and persistent identifiers.</li>
-              <li>I3. <i>(Meta)data include qualified references to other (meta)data</i>: Json and the rdf schema account for the data exchange and cross reference among metadata respectively.</li>
+              <li>I3. <i>(Meta)data include qualified references to other (meta)data</i>: JSON and the RDF schema account for the data exchange and cross reference among metadata respectively.</li>
             </ul>
             <p class="mbr-text pb-2 mbr-fonts-style display-7"><strong>Reusable</strong>: the ultimate goal of FAIR is to optimise the reuse of data. To achieve this, metadata and data should be well-described so that they can be replicated and/or combined in different settings.</p>
             <ul class="mbr-timeline-text mbr-fonts-style display-7">
               <li>R1. <i>Meta(data) are richly described with a plurality of accurate and relevant attributes</i>: our data and metadata are described through a rich and vary series of labels including the date of collection and modification of the data, the licence, the publisher, the creator, their content.</li>
-              <li>R1.1. <i>(Meta)data are released with a clear and accessible data usage license</i>: all data we used were released with the specification of the usage license except for those from the unhcr and ucdp. License in specified for the dataset and respective metadata we created (Creative Common License CC BY 4.0).</li>
+              <li>R1.1. <i>(Meta)data are released with a clear and accessible data usage license</i>: all data we used were released with the specification of the usage license except for those from the UNHCR and UCDP. License in specified for the dataset and respective metadata we created (Creative Common License CC BY 4.0).</li>
               <li>R1.2. <i>(Meta)data are associated with detailed provenance</i>: our project includes information about the provenance of data in a machine-readable format in the metadata codification. The website presents also a description of the workflow that led to your data.</li>
               <li>R1.3. <i>(Meta)data meet domain-relevant community standards</i>: we used the ISO standard for geographic information.</li>
             </ul>
@@ -171,9 +171,9 @@
               <p class="mbr-text pb-2 mbr-fonts-style display-7">Publishers of the original datasets:<br><br>
                 <strong>UNHCR</strong>: we could not find information about the licence, nor about the last data of modification, maintenance issues and the version of the data. Lack of attribution of license means to abandon data forever, which means that other companies can recopyright it.<br><br>
                 <strong>WBG</strong>: the licence used is CC BY-4.0. The maintenance follows an annual base. We could not find information about the version, nor about the last date of modification, except for the data about national and ILO unemployment (September 2019).<br><br>
-                <strong>CHC Insurance Services Ltd</strong>: for the publication of data concerning the domestic and international terrorist attacks, the CHC Insurance Services created a specific <a href="https://www.start.umd.edu/gtd/wp-content/uploads/2019/11/CHC_GTD_EULA_NonCommercialUser_2019_V1.5.pdf" class="text-info" target="_blank">Global Terrorism Database End User license Agreement</a>. This agreement presents some conditions: data cannot be published unless aggregated (see §5), and re-licensing is not permitted. You can find specific mention of the source as required by this agreement in our <a href="license.html" style="color:white">License</a> page, and in the metadata about our dataset. Information about maintenance and version of the data is not available. Date of the last modification: September 2019. Data are provided only in the Excel format.<br><br>
+                <strong>CHC Insurance Services Ltd</strong>: for the publication of data concerning the domestic and international terrorist attacks, the CHC Insurance Services created a specific <a href="https://www.start.umd.edu/gtd/wp-content/uploads/2019/11/CHC_GTD_EULA_NonCommercialUser_2019_V1.5.pdf" class="text-info" target="_blank">Global Terrorism Database End User license Agreement</a>. This agreement presents some conditions: data cannot be published unless aggregated (see §5), and re-licensing is not permitted. You can find specific mention of the source as required by this agreement in our <a href="license.html">License</a> page, and in the metadata about our dataset. Information about maintenance and version of the data is not available. Date of the last modification: September 2019. Data are provided only in the Excel format.<br><br>
                 <strong>UCDP</strong>: the data provided by the UCDP are in a critical situation, as they lack information about the licence and maintenance. We were able to find information about the version and the date of the last modification, 27/05/2019.<br><br>
-                <strong>Gapminder</strong>:the licence used is CC BY-4.0. The sheets starting with the word "data" are covered by this license. Other sheets are included for documentation purpose, and may include data that is governed by other licenses. Check the <a href="https://docs.google.com/document/d/1-RmthhS2EPMK_HIpnPctcXpB0n7ADSWnXa5Hb3PxNq4/edit" class="text-info" target="_blank">license page</a> to see the complete list of licenses. The maintenance follows an annual base. Version and date of the last modification are available. Although this is the most complete source we could find, data are provided only in Excel, which is not an open format file.
+                <strong>Gapminder</strong>:the licence used is CC BY-4.0. The sheets starting with the word "data" are covered by this license. Other sheets are included for documentation purpose, and may include data that is governed by other licenses. Check their <a href="https://docs.google.com/document/d/1-RmthhS2EPMK_HIpnPctcXpB0n7ADSWnXa5Hb3PxNq4/edit" class="text-info" target="_blank">license page</a> to see the complete list of licenses. The maintenance follows an annual base. Version and date of the last modification are available. Although this is the most complete source we could find, data are provided only in Excel, which is not an open format file.
               </p>
               <p class="mbr-text pb-2 mbr-fonts-style display-7">
                 While the data of the Global Terrorism Database and the EIU Democracy Indices are provided exclusively in Excel, the other data are provided in open format; always in csv format and in most of the cases in xml as well. The legal situation of the original datasets affected to some extent our research: data available behind login, data not available in open format, data available only if aggregated represented some obstacles for our research.
@@ -186,26 +186,25 @@
               </p>
               <p class="mbr-text pb-5 mbr-fonts-style display-7">
                 <strong>UNHCR</strong>: since 2015, UNHCR has its own <a href="https://www.refworld.org/pdfid/55643c1d4.pdf" class="text-info" target="_blank">Data Protection Policy</a>. Although the Data Protection Policy adopted some principles, such as the privacy by design and by default approach (GDPR Article 25) that are included in the GDPR, there is not an explicit declaration of full compliance with the GDPR.<br><br>
-                <strong>WBG</strong>: according to The World Bank Group’s presentation about “<a href="https://www.ica.org/sites/default/files/10-2018-05-25_-_44th_sio_meeting_-_gdpr_at_the_wbg.pdf" class="text-info" target="_blank">GDPR at the WBG</a>” (25th May 2018) their GDPR-compliant privacy program was not fully comply with GDPR in May of 2018. However, thanks to the support of external consultancy, they have drawn an implementation plan to carry a series of actions that will help them to reach full compliance with GDPR.<br><br>
+                <strong>WBG</strong>: according to The World Bank Group’s presentation about “<a href="https://www.ica.org/sites/default/files/10-2018-05-25_-_44th_sio_meeting_-_gdpr_at_the_wbg.pdf" class="text-info" target="_blank">GDPR at the WBG</a>” (25th May 2018) their GDPR-compliant privacy program was not fully complying with GDPR in May of 2018. However, thanks to the support of external consultancy, they have drawn an implementation plan to carry a series of actions that will help them to reach full compliance with GDPR.<br><br>
                 <strong>GTD</strong>: we take into consideration The National Consortium for the Study of Terrorism and Responses to Terrorism (START), which makes the GTD available, because its studies focus on the causes and consequences of terrorism not only in the United States but also all around the world. There is no information available about the data protection policy adopted for their dataset.<br><br>
                 <strong>UCDP</strong>: There is no information available about the data protection policy adopted for their dataset. The GDPR is not mentioned in the UCDP Georeferenced Event Dataset Codebook for version 19.1.<br><br>
-                <strong>EIU</strong>: In section 14.1 of the “Terms and Conditions of access” page, which is part of the agreement between The Economist Intelligence Unit, NA, Incorporated ("EIU") and the client, The Economist Intelligence Unit states states its effort in pursuing compliance with the requirements established by the GDPR.
+                <strong>EIU</strong>: In section 14.1 of the “Terms and Conditions of access” page, which is part of the agreement between The Economist Intelligence Unit, NA, Incorporated ("EIU") and the client, The Economist Intelligence Unit states its effort in pursuing compliance with the requirements established by the GDPR.
               </p>
             </div>
           </div>
           <div id="ethical" class="anchor">
             <h4 class="mbr-section-subtitle mbr-light mbr-fonts-style">4.3. Ethical Analysis</h4>
-            <p class="mbr-text pb-5 mbr-fonts-style display-7">How much sustainable and bias-free are our data providers? <br><br>
+            <p class="mbr-text pb-5 mbr-fonts-style display-7">How sustainable and bias-free are our data providers? <br><br>
               <strong>UNHCR</strong>: since 2008 the establishment and enforcement of an ethical culture has been pursued in the UNHCR through its Ethics Office, which is committed since then in providing the highest standards of ethical and professional conduct within the organisation.<br><br>
               <strong>WBG</strong>: the World Bank Group applies the highest ethical standards in any task performed thanks to the coordination and promotion acted by the Group’s dedicated Ethics and Business Conduct Department (EBC), whose aim is also the development, besides the application, of ethical standards.<br><br>
               <strong>GTD</strong>: the GTD does not include information about terroristic events that are exclusively documented by biased or unreliable sources. However, it may present data from certain biased sources for instance concerning the reasons of an attack. In that case, the GTD provides a more conservative documentation.<br><br>
-              <strong>UCDP</strong>: in the evaluation of the sources of data transparency was crucial for the ucdp. The context of publication of each source has been taken into account, in order to assess its potential interests in misrepresenting violent events, and so to avoid the use of discriminatory sources.<br><br>
+              <strong>UCDP</strong>: in the evaluation of the sources of data transparency was crucial for the UCDP. The context of publication of each source has been taken into account, in order to assess its potential interests in misrepresenting violent events, and so to avoid the use of discriminatory sources.<br><br>
               <strong>EIU</strong>: The Economist Intelligence Unit’s business is founded on integrity. They declare to operate in an sustainable and ethical manner, by using high standards and founding their behaviour on fairness, honesty and trust.
             </p>
           </div>
           <div id="technical" class="anchor">
             <h4 class="mbr-section-subtitle mbr-light mbr-fonts-style">4.4. Technical Analysis</h4>
-            <p class="mbr-text pb-3 mbr-fonts-style display-7">
               <strong>UNHCR</strong>
               <ul id="side-menu" class="mbr-text mbr-fonts-style display-7">
                 <li><i>Format</i>: csv, hxl.</li>
@@ -253,13 +252,12 @@
                 <li><i>Provenance</i>: <a href="https://ucdp.uu.se/downloads/index.html#ged_global" class="text-info" target="_blank">https://ucdp.uu.se/downloads/index.html#ged_global</a></li>
               </ul><br>
               <strong>EIU</strong>
-              <ul id="side-menu" class="mbr-text mbr-fonts-style display-7">
+              <ul id="side-menu" class="mbr-text mbr-fonts-style display-7 pb-5">
                 <li><i>Format</i>: excel.</li>
                 <li><i>Metadata</i>: the ABOUT excel sheet contains a lot of metadata about the dataset, such as version, date of last update, link to latest and download online version, contributors, dataset description, link to documentation, ids and link to sources, license, catalogue status and validation.</li>
                 <li><i>URI</i>: <a href="http://www.gapm.io/dxlsdemocrix" class="text-info" target="_blank">http://www.gapm.io/dxlsdemocrix</a></li>
                 <li><i>Provenance</i>: <a href="https://www.gapminder.org/data/documentation/democracy-index/" class="text-info" target="_blank">https://www.gapminder.org/data/documentation/democracy-index/</a></li>
               </ul>
-            </p>
             <p class="mbr-text pb-5 mbr-fonts-style display-7">
               Our dataset Flucht resulted from the combination of the datasets analysed above. We believe there should not be privacy issues resulting out of the combination of our input datasets as our data is not granular enough.
             </p>
@@ -274,13 +272,13 @@
         <div id="visualisations" class="anchor">
           <h3 class="mbr-section-subtitle mbr-fonts-style mbr-light display-5">6. Visualisations</h3>
           <p class="mbr-text pb-5 mbr-fonts-style display-7">
-            In the page <a href="visualisations.html" style="color:white">Visualisation</a> the user can find some graphical representations that are thought to help them better understand the data we collected. There is a map visualisation which allows the user to select one among the economic and political aspects we analysed, and shows it both in the map and in the correspondent bar chart. By selecting a country in the map, the user can see the total value on the map, and the value year by year from 2008 to 2018 in the bar chart. In the Graphs section we made available a bubble chart representing the total number of displaced people per country between 2008 and 2018, and a graph allowing you to visualise two different aspects among the economic and political ones at the same time, in the form of bar or line chart.
+            In the page <a href="visualisations.html">Visualisation</a> the user can find some graphical representations that are thought to help them better understand the data we collected. There is a map visualisation which allows the user to select one among the economic and political aspects we analysed, and shows it both in the map and in the correspondent bar chart. By selecting a country in the map, the user can see the total value on the map, and the value year by year from 2008 to 2018 in the bar chart. In the Graphs section we made available a bubble chart representing the total number of displaced people per country between 2008 and 2018, and a graph allowing you to visualise two different aspects among the economic and political ones at the same time, in the form of bar or line chart.
           </p>
         </div>
         <div id="metadata" class="anchor">
           <h3 class="mbr-section-subtitle mbr-fonts-style mbr-light display-5">7. RDF Metadata</h3>
           <p class="mbr-text pb-5 mbr-fonts-style display-7">
-             we used the DCAT Application Profile for data portals in Europe, version 2.0.0, to encode the metadata about all our data, including the original datasets and our own dataset Flucht. Click <a href="https://github.com/Flucht/flucht.github.io/blob/master/data/DCAT_AP_metadata.rdf" class="text-info" target="_blank">here</a> to see the code on our GitHub project.
+             We used the DCAT Application Profile for data portals in Europe, version 2.0.0, to encode the metadata about all our data, including the original datasets and our own dataset Flucht. Click <a href="https://github.com/Flucht/flucht.github.io/blob/master/data/DCAT_AP_metadata.rdf" class="text-info" target="_blank">here</a> to see the code on our GitHub project.
           </p>
         </div>
         <div id="conclusions" class="anchor">
