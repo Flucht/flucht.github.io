@@ -50,6 +50,7 @@ function updateChart(input_graph, input_nation, predicate_1, predicate_2) {
 
     // Set Text
     if (tooltip.body) {
+      console.log(tooltip)
       var titleLines = tooltip.title || [];
       var bodyLines = tooltip.body.map(getBody);
 

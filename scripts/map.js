@@ -131,7 +131,10 @@ function updateMap(predicate) {
           "scales":{
             "yAxes":[{
               "ticks":{
-                "beginAtZero":true
+                "beginAtZero":true,
+                 "callback": function(value, index, values) {
+                    return value.toLocaleString('de');
+                }
               }
             }]
           }
@@ -202,7 +205,7 @@ function updateMap(predicate) {
 
       labels.push(
         '<i style="background:' + getColor(from + 1) + '"></i> ' +
-        from + (to ? '&ndash;' + to : '+'));
+        convertNumber(from) + (convertNumber(to) ? '&ndash;' + convertNumber(to) : '+'));
     }
 
     div.innerHTML = labels.join('<br>');
