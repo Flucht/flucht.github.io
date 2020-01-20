@@ -132,9 +132,9 @@ function updateMap(predicate) {
             "yAxes":[{
               "ticks":{
                 "beginAtZero":true,
-                 "callback": function(value, index, values) {
+                "callback": function(value, index, values) {
                     return value.toLocaleString('de');
-                }
+                  },
               }
             }]
           }
