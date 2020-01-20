@@ -501,7 +501,7 @@ body {
   color: #f7ed4a !important;
 }
 .text-info {
-  color: #ED5E19 !important;
+  color: #53A1D6 !important;
 }
 .text-warning {
   color: #879a9f !important;
@@ -593,7 +593,7 @@ a.text-black:focus {
 }
 a,
 a:hover {
-  color: #53A1D6;
+  color: #ED5E19;
 }
 .mbr-plan-header.bg-primary .mbr-plan-subtitle,
 .mbr-plan-header.bg-primary .mbr-plan-price-desc {
