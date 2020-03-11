@@ -115,6 +115,12 @@ function updateMap(predicate) {
     destroyChart();
 
     if (document.getElementById('map-graph') != null) {
+      if (props != 'emptyChart') {
+        document.getElementById("country-name").innerHTML = props.name
+      } else {
+        document.getElementById("country-name").innerHTML = "<i>Unselected.</i> Hover over the map, please."
+      }
+
       chart = new Chart(document.getElementById('map-graph'),{
         "type":"bar",
         "data":{

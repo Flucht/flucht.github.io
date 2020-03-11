@@ -4147,6 +4147,7 @@ body {
   padding: 0.5rem 1rem;
   margin: 0.4rem .5rem !important;
   transition: all .5s;
+  background-color: #ffffff;
 }
 .cid-rvsO0Sfnun .nav-tabs .nav-link:hover {
   color: #000000;
